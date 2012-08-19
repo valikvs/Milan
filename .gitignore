@@ -1,0 +1,9 @@
+bin/
+obj/
+*.suo
+*.user
+*cache
+_ReSharper*
+
+Umbraco/*
+!Umbraco/.gitkeep
