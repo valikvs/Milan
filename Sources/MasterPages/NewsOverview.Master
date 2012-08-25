@@ -1,0 +1,6 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NewsOverview.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.NewsOverview" MasterPageFile="~/masterpages/MainContent.master" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    NewsOverview
+</asp:Content>

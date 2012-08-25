@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BaseContent.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.BaseContent" %>
+
+<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
+    Assembly="umbraco" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        <umbraco:Item ID="uPageName" useIfEmpty="pageName" runat="server" />
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javaScript" src="/scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javaScript" src="/scripts/actions.js"></script>
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderBase" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

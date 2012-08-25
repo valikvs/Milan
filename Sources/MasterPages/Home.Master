@@ -1,0 +1,7 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.Master.cs" Inherits="VSS.Milan.Web.MasterPages.Home"
+    MasterPageFile="~/masterpages/BaseContent.master" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
+    Home
+</asp:Content>
+
