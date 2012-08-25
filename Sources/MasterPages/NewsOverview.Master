@@ -2,5 +2,56 @@
     Inherits="VSS.Milan.Web.MasterPages.NewsOverview" MasterPageFile="~/masterpages/MainContent.master" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-    NewsOverview
+
+  <div class="mainCol clearfix newsCol"> <img src="/pictures/_tmp1.jpg" width="277" height="199" alt="pic"> <img src="/pictures/_tmp1.jpg" width="277" height="199" alt="pic">
+    <h6> 28 декабря 2009</h6>
+    <p>Some text.</p>
+    <h6> 28 декабря 2009</h6>
+    <p>Some text.</p>
+    <div class="social"> <img src="/pictures/_tmp2.png" width="58" height="20" alt="like"></div>
+  </div>
+  <div class="sideCol">
+    <h2>Новости</h2>
+    <ul class="menu">
+      <li><a href="#">2012</a>
+        <ul>
+          <li><a href="#">апрель</a></li>
+          <li><a href="#">март</a></li>
+          <li><a href="#">февраль</a></li>
+        </ul>
+      </li>
+      <li><a href="#">2011</a>
+        <ul>
+          <li><a href="#">апрель</a></li>
+          <li><a href="#">март</a></li>
+          <li><a href="#">февраль</a></li>
+        </ul>
+      </li>
+      <li><a href="#">2009</a>
+        <ul>
+          <li><a href="#">апрель</a></li>
+          <li><a href="#">март</a></li>
+          <li><a href="#">февраль</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a href="#" class="link archive">архив</a>
+    <div class="partners">
+      <h2></h2>
+      <p>Салон Андеграунд<br>
+        <a href="#">www.undergroundgroup.by</a></p>
+      <p>Группа Сквирел<br>
+        <a href="#">www.skvirel.com</a></p>
+      <p>Салон Андеграунд<br>
+        <a href="#">www.undergroundgroup.by</a></p>
+      <p>ECOHOUSE<br>
+        <a href="#">www.ecohouse.by</a></p>
+      <p>CINEMAX<br>
+        <a href="#">www.cinemax.by</a></p>
+    </div>
+  </div>
+  <div class="clear he">
+    <!---->
+  </div>
+
 </asp:Content>

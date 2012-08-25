@@ -1,8 +1,27 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainContent.master.cs"
     Inherits="VSS.Milan.Web.MasterPages.MainContent" MasterPageFile="~/masterpages/BaseContent.master" %>
+<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls" Assembly="umbraco" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
-    MainContent
-    <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
-    </asp:ContentPlaceHolder>
+    <div class="wrapper">
+        <div class="mainTop clearfix">
+            <div class="side">
+                <a href="#" class="rus cur"></a><a href="#" class="eng"></a><a href="#" class="facebook">
+                </a><a href="#" class="twitter"></a>
+            </div>
+            <a href="#" class="logo"></a>
+            <umbraco:Macro ID="uTopNav" Alias="MainNavigation" runat="server" />
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="mainFooter">
+        <div class="side">
+            Посетители <span>9</span> <span>9</span> <span>9</span>
+        </div>
+        <p>
+            Милан, 2012
+        </p>
+        <umbraco:Macro ID="uBottomNav" Alias="MainNavigation" runat="server" />
+    </div>
 </asp:Content>

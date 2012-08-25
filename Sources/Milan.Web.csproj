@@ -73,6 +73,13 @@
     <Compile Include="MasterPages\BaseContent.Master.designer.cs">
       <DependentUpon>BaseContent.Master</DependentUpon>
     </Compile>
+    <Compile Include="MasterPages\LanguageFolder.Master.cs">
+      <DependentUpon>LanguageFolder.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\LanguageFolder.Master.designer.cs">
+      <DependentUpon>LanguageFolder.Master</DependentUpon>
+    </Compile>
     <Compile Include="MasterPages\NewsOverview.Master.cs">
       <DependentUpon>NewsOverview.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,6 +143,7 @@
     <Content Include="MasterPages\Home.Master" />
     <Content Include="MasterPages\MainContent.Master" />
     <Content Include="MasterPages\NewsOverview.Master" />
+    <Content Include="MasterPages\LanguageFolder.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -164,7 +172,7 @@ XCOPY "$(ProjectDir)UserControls\*.ascx" "..\..\Umbraco\usercontrols\" /Y
 XCOPY "$(ProjectDir)MasterPages\*.master" "..\..\Umbraco\masterpages\" /Y
 XCOPY "$(ProjectDir)css\*.*" "..\..\Umbraco\css\" /Y
 XCOPY "$(ProjectDir)fonts\*.*" "..\..\Umbraco\fonts\" /Y
-XCOPY "$(ProjectDir)images\*.*" "..\..\Umbraco\images\" /Y
+XCOPY "$(ProjectDir)images\*.*" "..\..\Umbraco\images\" /Y /E
 XCOPY "$(ProjectDir)js\*.*" "..\..\Umbraco\scripts\" /Y
 XCOPY "$(ProjectDir)pictures\*.*" "..\..\Umbraco\pictures\" /Y</PostBuildEvent>
   </PropertyGroup>

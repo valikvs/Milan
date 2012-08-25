@@ -1,0 +1,1 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LanguageFolder.master.cs" Inherits="VSS.Milan.Web.MasterPages.LanguageFolder" %>
