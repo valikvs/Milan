@@ -70,11 +70,37 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CSS\" />
-    <Folder Include="MasterPages\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="UserControls\" />
-    <Folder Include="XSLT\" />
+    <Folder Include="masterpages\" />
+    <Folder Include="usercontrols\" />
+    <Folder Include="xslt\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\common.css" />
+    <Content Include="css\inputs.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="fonts\gothic.svg" />
+    <Content Include="fonts\gothicb.svg" />
+    <Content Include="images\arrows\arrow_left-menu.png" />
+    <Content Include="images\bullets\bullet_top.png" />
+    <Content Include="images\icons\eng.png" />
+    <Content Include="images\icons\facebook.png" />
+    <Content Include="images\icons\rus.png" />
+    <Content Include="images\icons\twitter.png" />
+    <Content Include="images\logo_milan.png" />
+    <Content Include="images\top_bg.png" />
+    <Content Include="js\actions.js" />
+    <Content Include="js\jquery-1.7.1.min.js" />
+    <Content Include="pictures\_tmp1.jpg" />
+    <Content Include="pictures\_tmp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\gothic.eot" />
+    <None Include="fonts\gothic.ttf" />
+    <None Include="fonts\gothic.woff" />
+    <None Include="fonts\gothicb.eot" />
+    <None Include="fonts\gothicb.ttf" />
+    <None Include="fonts\gothicb.woff" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -98,12 +124,15 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>XCOPY "$(ProjectDir)bin\$(TargetName).*" "..\..\Umbraco\bin" /Y
-XCOPY "$(ProjectDir)UserControls\*.ascx" "..\..\Umbraco\usercontrols" /Y
-XCOPY "$(ProjectDir)CSS\*.*" "..\..\Umbraco\css" /Y
-XCOPY "$(ProjectDir)Scripts\*.*" "..\..\Umbraco\scripts" /Y
-XCOPY "$(ProjectDir)XSLT\*.*" "..\..\Umbraco\xslt" /Y
-XCOPY "$(ProjectDir)MasterPages\*.*" "..\..\Umbraco\masterpages" /Y</PostBuildEvent>
+    <PostBuildEvent>XCOPY "$(ProjectDir)bin\$(TargetName).*" "..\..\Umbraco\bin\" /Y
+XCOPY "$(ProjectDir)usercontrols\*.ascx" "..\..\Umbraco\usercontrols\" /Y
+XCOPY "$(ProjectDir)xslt\*.*" "..\..\Umbraco\xslt\" /Y
+XCOPY "$(ProjectDir)masterpages\*.*" "..\..\Umbraco\masterpages\" /Y
+XCOPY "$(ProjectDir)css\*.*" "..\..\Umbraco\css\" /Y
+XCOPY "$(ProjectDir)fonts\*.*" "..\..\Umbraco\fonts\" /Y
+XCOPY "$(ProjectDir)images\*.*" "..\..\Umbraco\images\" /Y
+XCOPY "$(ProjectDir)js\*.*" "..\..\Umbraco\scripts\" /Y
+XCOPY "$(ProjectDir)pictures\*.*" "..\..\Umbraco\pictures\" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

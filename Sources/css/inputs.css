@@ -1,0 +1,16 @@
+input, select, textarea, button { font-family: Verdana, Geneva, sans-serif; font-size:10px; color:#636363; }
+fieldset { border:none;}
+
+.form input[type="text"], .form input[type="password"], .form select, .form textarea { border:1px solid #c9c9c9;}
+.form input[type="text"], .form input[type="password"], .form select {height:19px;}
+.form select, .form input[type="submit"], .form input[type="button"], .form button {height:21px;}
+.form input[type="text"], .form input[type="password"] {padding:0 2px;}
+.form input, .form select, .form button {vertical-align:middle;}
+.form input[type="button"], .form button { color:#636363;}
+
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, button::-moz-focus-inner{ border:0px; } 
+input[type="text"], input[type="password"], textarea, select { outline: none; }
+
+
+/*__dimensions__*/
+

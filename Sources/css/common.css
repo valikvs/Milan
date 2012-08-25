@@ -1,0 +1,85 @@
+@charset "utf-8";
+/*__base styles__*/
+html {width:100%; height:100%;}
+body {height:100%; font-family: Arial, Helvetica, sans-serif; font-size:12px; min-width:1000px; color:#000; background:#fff;}
+
+a:link, a:visited { text-decoration:none; color:#5F6262; }
+a:hover {text-decoration:underline;}
+
+.clear { clear:both; content:"."; zoom:1; float:none !important; text-indent:-5000px; font-size:0px !important; line-height:0px !important; }
+.he {height:140px;}
+.fRight {float:right;}
+
+@font-face { font-family: 'CenturyGothic'; src: url('../fonts/gothic.eot'); src: url('../fonts/gothic.eot?#iefix') format('embedded-opentype'), url('../fonts/gothic.woff') format('woff'), url('../fonts/gothic.ttf') format('truetype'), url('../fonts/gothic.svg#gothic') format('svg'); font-weight: normal; font-style: normal;}
+@font-face { font-family: 'CenturyGothic-Bold'; src: url('../fonts/gothicb.eot'); src: url('../fonts/gothicb.eot?#iefix') format('embedded-opentype'), url('../fonts/gothicb.woff') format('woff'), url('../fonts/gothicb.ttf') format('truetype'), url('../fonts/gothicb.svg#gothicb') format('svg'); font-weight: normal; font-style: normal;}
+
+.clearfix:after {content:""; display:block; clear:both;}
+*html .clearfix {height:1%;}
+*:first-child+html .clearfix {height:1%;}
+
+h1,h2,h3,h4,h5,h6 {font-weight:normal; color:#000; font-family: 'CenturyGothic-Bold', Arial, Helvetica, sans-serif;}
+h1 {font-size:16px; line-height:17px;}
+h2 {font-size:15px; line-height:17px;}
+h3 {font-size:13px;}
+h4 {font-size:12px;}
+h5 {font-size:11px;}
+h6 {font-size:12px; font-family: 'CenturyGothic';}
+
+.wrapper {position:relative; width:1000px; z-index:1; margin:0 auto; min-height:100%; height:auto;}
+*html .wrapper { height:100%; }
+
+/*header*/
+.mainTop {background:url(../images/top_bg.png) left bottom repeat-x; padding:30px 19px 12px 19px; font-size:11px; margin-bottom:52px; font-family: 'CenturyGothic';}
+.mainTop .logo {background:url(../images/logo_milan.png); width:292px; height:60px; float:left;}
+.mainTop .side { float:right; margin:16px 0 0 0;}
+.mainTop .side a {display:inline-block; width:27px; height:26px; margin-left:2px;}
+.mainTop .side .rus { background:url(../images/icons/rus.png);}
+.mainTop .side .eng { background:url(../images/icons/eng.png);}
+.mainTop .side .facebook { background:url(../images/icons/facebook.png);}
+.mainTop .side .twitter { background:url(../images/icons/twitter.png);}
+.mainTop .side a:hover, .mainTop .side .cur { background-position:bottom;}
+.mainTop ul { float:left; margin:17px 0 0 45px; font-size:14px;}
+.mainTop ul li { float:left; background:url(../images/bullets/bullet_top.png) left 2px no-repeat; padding-left:12px; margin-left:11px;}
+.mainTop ul li:first-child { background:none; padding-left:0; margin-left:0;}
+.mainTop ul li a {color:#000;}
+.mainTop ul li a:hover { color:#5F6262; text-decoration:none;}
+
+/*side col*/
+.sideCol { float:left; width:220px; font-size:12px; padding:0 10px 0 94px}
+.sideCol h2 { margin-bottom:17px;}
+.sideCol a { color:#000;}
+.sideCol a:hover { color:#5F6262;}
+.sideCol .menu { padding:9px 0 12px 0;}
+.sideCol .menu > li { padding-bottom:4px;}
+.sideCol .menu > li > a { display:inline-block; background:url(../images/arrows/arrow_left-menu.png) right 5px no-repeat; padding-right:9px; text-decoration:none;}
+.sideCol .menu .expanded > a {background-position:right -20px;}
+.sideCol .menu li > ul { display:none; font-size:11px; padding:1px 0 6px 5px;}
+.sideCol .partners { padding-top:88px;}
+.sideCol .partners a { color:#5F6262;}
+.sideCol .partners p { padding-bottom:6px; padding-top:6px; line-height:14px;}
+
+/*main col*/
+.mainCol { float:right; width:580px; padding-right:64px;}
+
+/*news col*/
+.newsCol { padding-top:5px; line-height:16px;}
+.newsCol img { display:inline-block; margin-right:9px; margin-bottom:8px;}
+.newsCol h6 { clear:both; margin-bottom:11px;}
+.newsCol p { padding-bottom:21px;}
+.newsCol .social { float:right; margin:-11px 3px 10px 0;}
+
+
+
+
+
+
+/*footer*/
+.mainFooter{height:43px; width:959px; margin:-70px auto 0; position:relative; z-index:10; background:url(../images/top_bg.png) left top repeat-x; font-size:12px; padding:27px 21px 0 20px; font-family: 'CenturyGothic';}
+.mainFooter .side {float:right;}
+.mainFooter .side span {display:inline-block; background:#000; color:#fff; padding:1px 1px 0px 1px; margin-right:-1px; line-height:13px;}
+.mainFooter .side span:first-child { margin-left:5px;}
+.mainFooter ul { float:left; margin:-16px 0 0 336px;}
+.mainFooter ul li {float:left; background:url(../images/bullets/bullet_top.png) left 1px no-repeat; padding-left:10px; margin-left:9px;}
+.mainFooter ul li:first-child {background:none; padding-left:0; margin-left:0;}
+.mainFooter ul li a {color:#000;}
+.mainFooter ul li a:hover { color:#5F6262; text-decoration:none;}
