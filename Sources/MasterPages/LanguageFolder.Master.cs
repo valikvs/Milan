@@ -28,7 +28,7 @@
             }
 
             var startNode = CurrentNode.PropertyAsNode(Fields.LanguageFolder.StartNode);
-            if (startNode != null)
+            if (startNode != null && startNode.Id != CurrentNode.Id)
             {
                 var url = startNode.Url;
                 if (!string.IsNullOrEmpty(url))

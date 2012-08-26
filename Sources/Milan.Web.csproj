@@ -69,6 +69,7 @@
     <Compile Include="Core\Constants\DocumentTypes.cs" />
     <Compile Include="Core\Constants\Fields.cs" />
     <Compile Include="Core\Extentions\NodeExtentions.cs" />
+    <Compile Include="Core\Extentions\StringExtetions.cs" />
     <Compile Include="Core\Utils\Helper.cs" />
     <Compile Include="Core\Utils\NodeHelper.cs" />
     <Compile Include="MasterPages\BaseContent.Master.cs">
@@ -128,6 +129,27 @@
     <Compile Include="UserControls\MediaPartners.ascx.designer.cs">
       <DependentUpon>MediaPartners.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\NewsArchive.ascx.cs">
+      <DependentUpon>NewsArchive.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NewsArchive.ascx.designer.cs">
+      <DependentUpon>NewsArchive.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NewsNavigation.ascx.cs">
+      <DependentUpon>NewsNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NewsNavigation.ascx.designer.cs">
+      <DependentUpon>NewsNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NewsYear.ascx.cs">
+      <DependentUpon>NewsYear.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NewsYear.ascx.designer.cs">
+      <DependentUpon>NewsYear.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -152,6 +174,9 @@
     <Content Include="UserControls\HeaderButtons.ascx" />
     <Content Include="UserControls\MainNavigation.ascx" />
     <Content Include="UserControls\MediaPartners.ascx" />
+    <Content Include="UserControls\NewsArchive.ascx" />
+    <Content Include="UserControls\NewsNavigation.ascx" />
+    <Content Include="UserControls\NewsYear.ascx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fonts\gothic.eot" />

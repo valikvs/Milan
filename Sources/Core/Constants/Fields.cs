@@ -38,6 +38,11 @@
             public const string MediaPartnersTitle = "mediaPartnersTitle";
         }
 
+        public static class NewsYear
+        {
+            public const string Archive = "archive";
+        }
+
         public static class MediaPartner
         {
             public const string Title = "title";

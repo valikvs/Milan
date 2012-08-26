@@ -12,31 +12,7 @@
     <div class="social"> <img src="/pictures/_tmp2.png" width="58" height="20" alt="like"></div>
   </div>
   <div class="sideCol">
-    <h2>Новости</h2>
-    <ul class="menu">
-      <li><a href="#">2012</a>
-        <ul>
-          <li><a href="#">апрель</a></li>
-          <li><a href="#">март</a></li>
-          <li><a href="#">февраль</a></li>
-        </ul>
-      </li>
-      <li><a href="#">2011</a>
-        <ul>
-          <li><a href="#">апрель</a></li>
-          <li><a href="#">март</a></li>
-          <li><a href="#">февраль</a></li>
-        </ul>
-      </li>
-      <li><a href="#">2009</a>
-        <ul>
-          <li><a href="#">апрель</a></li>
-          <li><a href="#">март</a></li>
-          <li><a href="#">февраль</a></li>
-        </ul>
-      </li>
-    </ul>
-    <a href="#" class="link archive">архив</a>
+    <umbraco:Macro ID="uNewsNavigation" Alias="NewsNavigation" runat="server" />
     <umbraco:Macro ID="uMediaPartners" Alias="MediaPartners" runat="server" />
   </div>
   <div class="clear he">
