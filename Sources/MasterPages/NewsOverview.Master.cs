@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace VSS.Milan.Web.MasterPages
+﻿namespace VSS.Milan.Web.MasterPages
 {
+    using System;
+
     public partial class NewsOverview : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)

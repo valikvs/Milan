@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VSS.Milan.Web.MasterPages {
+namespace VSS.Milan.Web.UserControls {
     
     
-    public partial class Home {
+    public partial class HeaderButtons {
         
         /// <summary>
-        /// russianNodeUrl control.
+        /// btnRussian control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink russianNodeUrl;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnRussian;
         
         /// <summary>
-        /// englishNodeUrl control.
+        /// btnEnglish control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink englishNodeUrl;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnEnglish;
         
         /// <summary>
-        /// footerTopText control.
+        /// btnFacebook control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal footerTopText;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnFacebook;
         
         /// <summary>
-        /// footerBottomText control.
+        /// btnTwitter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal footerBottomText;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnTwitter;
     }
 }

@@ -66,6 +66,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Constants.cs" />
+    <Compile Include="Core\Extentions\NodeExtentions.cs" />
+    <Compile Include="Core\Utils\Helper.cs" />
     <Compile Include="MasterPages\BaseContent.Master.cs">
       <DependentUpon>BaseContent.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,6 +105,13 @@
       <DependentUpon>MainContent.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\HeaderButtons.ascx.cs">
+      <DependentUpon>HeaderButtons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HeaderButtons.ascx.designer.cs">
+      <DependentUpon>HeaderButtons.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MainNavigation.ascx.cs">
       <DependentUpon>MainNavigation.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,6 +140,7 @@
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="pictures\_tmp1.jpg" />
     <Content Include="pictures\_tmp2.png" />
+    <Content Include="UserControls\HeaderButtons.ascx" />
     <Content Include="UserControls\MainNavigation.ascx" />
   </ItemGroup>
   <ItemGroup>

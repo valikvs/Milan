@@ -5,11 +5,8 @@
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
     <div class="wrapper">
         <div class="mainTop clearfix">
-            <div class="side">
-                <a href="#" class="rus cur"></a><a href="#" class="eng"></a><a href="#" class="facebook">
-                </a><a href="#" class="twitter"></a>
-            </div>
-            <a href="#" class="logo"></a>
+            <umbraco:Macro ID="uHeaderButtons" Alias="HeaderButtons" runat="server" />
+            <a href="#" class="logo" runat="server" ID="logoUrl" clientidmode="Static"></a>
             <umbraco:Macro ID="uTopNav" Alias="MainNavigation" runat="server" />
         </div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
@@ -17,10 +14,10 @@
     </div>
     <div class="mainFooter">
         <div class="side">
-            Посетители <span>9</span> <span>9</span> <span>9</span>
+            <asp:Literal runat="server" ID="footerRightText"></asp:Literal>
         </div>
         <p>
-            Милан, 2012
+            <asp:Literal runat="server" ID="footerLeftText"></asp:Literal>
         </p>
         <umbraco:Macro ID="uBottomNav" Alias="MainNavigation" runat="server" />
     </div>

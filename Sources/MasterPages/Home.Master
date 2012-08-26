@@ -2,6 +2,10 @@
     MasterPageFile="~/masterpages/BaseContent.master" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
-    Home
+    <asp:HyperLink runat="server" ID="russianNodeUrl" Text="RU"></asp:HyperLink>
+    <asp:HyperLink runat="server" ID="englishNodeUrl" Text="EN"></asp:HyperLink>
+    <br/>
+    <asp:Literal runat="server" ID="footerTopText"></asp:Literal>
+    <br/>
+    <asp:Literal runat="server" ID="footerBottomText"></asp:Literal>
 </asp:Content>
-
