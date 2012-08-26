@@ -2,7 +2,7 @@
 {
     using System;
     using umbraco.NodeFactory;
-    using VSS.Milan.Web.Core;
+    using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
 
     public partial class Home : System.Web.UI.MasterPage
@@ -27,20 +27,20 @@
                 return;
             }
 
-            var russianNode = CurrentNode.PropertyAsNode(Constants.Home.RussianNode);
+            var russianNode = CurrentNode.PropertyAsNode(Fields.Home.RussianNode);
             if (russianNode != null)
             {
                 this.russianNodeUrl.NavigateUrl = russianNode.Url;
             }
 
-            var englishNode = CurrentNode.PropertyAsNode(Constants.Home.EnglishNode);
+            var englishNode = CurrentNode.PropertyAsNode(Fields.Home.EnglishNode);
             if (englishNode != null)
             {
                 this.englishNodeUrl.NavigateUrl = englishNode.Url;
             }
 
-            this.footerTopText.Text = CurrentNode.Property(Constants.Home.FooterTopText);
-            this.footerBottomText.Text = CurrentNode.Property(Constants.Home.FooterBottomText);
+            this.footerTopText.Text = CurrentNode.Property(Fields.Home.FooterTopText);
+            this.footerBottomText.Text = CurrentNode.Property(Fields.Home.FooterBottomText);
         }
     }
 }

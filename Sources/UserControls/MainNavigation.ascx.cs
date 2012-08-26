@@ -1,7 +1,6 @@
 namespace VSS.Milan.Web.UserControls
 {
     using System;
-
     using VSS.Milan.Web.Core.Utils;
 
     public partial class MainNavigation : System.Web.UI.UserControl
@@ -13,9 +12,16 @@ namespace VSS.Milan.Web.UserControls
                 return;
             }
 
-            var menuNodes = Helper.MainNavigationNodes;
-            rptNavigation.DataSource = menuNodes;
-            rptNavigation.DataBind();
+            var menuNodes = NodeHelper.MainMenuNodes;
+            if (menuNodes != null && menuNodes.Count > 0)
+            {
+                rptNavigation.DataSource = menuNodes;
+                rptNavigation.DataBind();
+            }
+            else
+            {
+                rptNavigation.Visible = false;
+            }
         }
     }
 }

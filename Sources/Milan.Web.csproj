@@ -66,9 +66,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Constants.cs" />
+    <Compile Include="Core\Constants\DocumentTypes.cs" />
+    <Compile Include="Core\Constants\Fields.cs" />
     <Compile Include="Core\Extentions\NodeExtentions.cs" />
     <Compile Include="Core\Utils\Helper.cs" />
+    <Compile Include="Core\Utils\NodeHelper.cs" />
     <Compile Include="MasterPages\BaseContent.Master.cs">
       <DependentUpon>BaseContent.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,6 +121,13 @@
     <Compile Include="UserControls\MainNavigation.ascx.designer.cs">
       <DependentUpon>MainNavigation.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MediaPartners.ascx.cs">
+      <DependentUpon>MediaPartners.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MediaPartners.ascx.designer.cs">
+      <DependentUpon>MediaPartners.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -142,6 +151,7 @@
     <Content Include="pictures\_tmp2.png" />
     <Content Include="UserControls\HeaderButtons.ascx" />
     <Content Include="UserControls\MainNavigation.ascx" />
+    <Content Include="UserControls\MediaPartners.ascx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fonts\gothic.eot" />

@@ -1,6 +1,6 @@
-﻿namespace VSS.Milan.Web.Core
+﻿namespace VSS.Milan.Web.Core.Constants
 {
-    public static class Constants
+    public static class Fields
     {
         public static class BaseContent
         {
@@ -30,6 +30,18 @@
         public static class MainContent
         {
             public const string ShowInNavigation = "showInNavigation";
+        }
+
+        public static class NewsOverview
+        {
+            public const string MediaPartnersNode = "mediaPartnersNode";
+            public const string MediaPartnersTitle = "mediaPartnersTitle";
+        }
+
+        public static class MediaPartner
+        {
+            public const string Title = "title";
+            public const string Url = "url";
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NewsOverview.Master.cs"
     Inherits="VSS.Milan.Web.MasterPages.NewsOverview" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls" Assembly="umbraco" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
 
@@ -36,19 +37,7 @@
       </li>
     </ul>
     <a href="#" class="link archive">архив</a>
-    <div class="partners">
-      <h2></h2>
-      <p>Салон Андеграунд<br>
-        <a href="#">www.undergroundgroup.by</a></p>
-      <p>Группа Сквирел<br>
-        <a href="#">www.skvirel.com</a></p>
-      <p>Салон Андеграунд<br>
-        <a href="#">www.undergroundgroup.by</a></p>
-      <p>ECOHOUSE<br>
-        <a href="#">www.ecohouse.by</a></p>
-      <p>CINEMAX<br>
-        <a href="#">www.cinemax.by</a></p>
-    </div>
+    <umbraco:Macro ID="uMediaPartners" Alias="MediaPartners" runat="server" />
   </div>
   <div class="clear he">
     <!---->

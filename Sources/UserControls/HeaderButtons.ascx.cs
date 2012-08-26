@@ -1,7 +1,7 @@
 ﻿namespace VSS.Milan.Web.UserControls
 {
     using System;
-    using VSS.Milan.Web.Core;
+    using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
     using VSS.Milan.Web.Core.Utils;
 
@@ -14,11 +14,11 @@
                 return;
             }
 
-            var russianNode = Helper.HomeNode.PropertyAsNode(Constants.Home.RussianNode);
+            var russianNode = Helper.HomeNode.PropertyAsNode(Fields.Home.RussianNode);
             if (russianNode != null)
             {
                 var css = "rus";
-                if (Helper.CurrentLanguageNode != null && russianNode.Id == Helper.CurrentLanguageNode.Id)
+                if (NodeHelper.LanguageNode != null && russianNode.Id == NodeHelper.LanguageNode.Id)
                 {
                     css += " cur";
                 }
@@ -31,11 +31,11 @@
                 this.btnRussian.Visible = true;
             }
 
-            var englishNode = Helper.HomeNode.PropertyAsNode(Constants.Home.EnglishNode);
+            var englishNode = Helper.HomeNode.PropertyAsNode(Fields.Home.EnglishNode);
             if (englishNode != null)
             {
                 var css = "eng";
-                if (Helper.CurrentLanguageNode != null && englishNode.Id == Helper.CurrentLanguageNode.Id)
+                if (NodeHelper.LanguageNode != null && englishNode.Id == NodeHelper.LanguageNode.Id)
                 {
                     css += " cur";
                 }
@@ -48,14 +48,14 @@
                 this.btnEnglish.Visible = true;
             }
 
-            var facebook = Helper.CurrentLanguageNode.Property(Constants.LanguageFolder.FacebookButtonUrl);
+            var facebook = NodeHelper.LanguageNode.Property(Fields.LanguageFolder.FacebookButtonUrl);
             if (!string.IsNullOrEmpty(facebook))
             {
                 this.btnFacebook.Attributes.Add("href", facebook);
                 this.btnFacebook.Visible = true;
             }
 
-            var twitter = Helper.CurrentLanguageNode.Property(Constants.LanguageFolder.TwitterButtonUrl);
+            var twitter = NodeHelper.LanguageNode.Property(Fields.LanguageFolder.TwitterButtonUrl);
             if (!string.IsNullOrEmpty(twitter))
             {
                 this.btnTwitter.Attributes.Add("href", twitter);

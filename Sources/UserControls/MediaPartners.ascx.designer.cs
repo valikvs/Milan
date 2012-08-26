@@ -7,18 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VSS.Milan.Web.MasterPages {
+namespace VSS.Milan.Web.UserControls {
     
     
-    public partial class NewsOverview {
+    public partial class MediaPartners {
         
         /// <summary>
-        /// uMediaPartners control.
+        /// partnersTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::umbraco.presentation.templateControls.Macro uMediaPartners;
+        protected global::System.Web.UI.WebControls.Literal partnersTitle;
+        
+        /// <summary>
+        /// rptPartners control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptPartners;
     }
 }

@@ -2,7 +2,7 @@
 {
     using System;
     using umbraco.NodeFactory;
-    using VSS.Milan.Web.Core;
+    using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
 
     public partial class LanguageFolder : System.Web.UI.MasterPage
@@ -27,7 +27,7 @@
                 return;
             }
 
-            var startNode = CurrentNode.PropertyAsNode(Constants.LanguageFolder.StartNode);
+            var startNode = CurrentNode.PropertyAsNode(Fields.LanguageFolder.StartNode);
             if (startNode != null)
             {
                 var url = startNode.Url;

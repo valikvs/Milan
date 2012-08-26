@@ -2,14 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Globalization;
-    using System.Linq;
-    using System.Threading;
     using umbraco;
-    using umbraco.cms.businesslogic.language;
     using umbraco.NodeFactory;
-    using VSS.Milan.Web.Core.Extentions;
-
-    using umbraco.interfaces;
 
     public static class Helper
     {
@@ -18,31 +12,6 @@
             get
             {
                 return GetNodeFromXpath("$currentPage/ancestor-or-self::*[@level=1]");
-            }
-        }
-
-        public static Node CurrentLanguageNode
-        {
-            get
-            {
-                return HomeNode.GetChildNodeByNameIgnoreCase(LanguageName) as Node;
-            }
-        }
-
-        public static List<INode> MainNavigationNodes
-        {
-            get
-            {
-                return CurrentLanguageNode.ChildrenAsList.Where(c => c.PropertyAsBool(Constants.MainContent.ShowInNavigation)).ToList();
-            }
-        } 
-
-        private static string LanguageName
-        {
-            get
-            {
-                var lang = Language.GetByCultureCode(Thread.CurrentThread.CurrentUICulture.Name);
-                return lang.CultureAlias.Substring(0, 2);
             }
         }
 
