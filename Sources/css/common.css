@@ -67,6 +67,28 @@ h6 {font-size:12px; font-family: 'CenturyGothic';}
 .newsCol h6 { clear:both; margin-bottom:11px;}
 .newsCol p { padding-bottom:21px;}
 .newsCol .social { float:right; margin:-11px 3px 10px 0;}
+.newsCol .newsContainer { padding-bottom:15px;}
+.newsCol .newsContainer img { float:left; margin:3px 15px 0 0;}
+.newsCol .newsContainer .col { display:table; zoom:1; min-width:375px;}
+.newsCol .newsContainer .link {float:right;}
+
+/*splash screen*/
+.splashContainer { padding:200px 0 0 18px;}
+.splashContainer a {display:block; float:left; height:197px; -webkit-transition: all 200ms linear; -moz-transition: all 200ms linear; -ms-transition: all 200ms linear; -o-transition: all 200ms linear; transition: all 200ms linear;}
+.splashContainer a:hover { background-position:bottom;}
+.splashContainer .rus {background:url(../images/splash/rus.png); width:517px; margin-right:13px;}
+.splashContainer .eng {background:url(../images/splash/eng.png); width:436px;}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -75,6 +97,8 @@ h6 {font-size:12px; font-family: 'CenturyGothic';}
 
 /*footer*/
 .mainFooter{height:43px; width:959px; margin:-70px auto 0; position:relative; z-index:10; background:url(../images/top_bg.png) left top repeat-x; font-size:12px; padding:27px 21px 0 20px; font-family: 'CenturyGothic';}
+.splash .mainFooter {text-align:center;}
+.splash .mainFooter h2 {font-family: 'CenturyGothic'; position:absolute; top:-30px; text-align:center; width:100%; left:4px; font-size:24px;}
 .mainFooter .side {float:right;}
 .mainFooter .side span {display:inline-block; background:#000; color:#fff; padding:1px 1px 0px 1px; margin-right:-1px; line-height:13px;}
 .mainFooter .side span:first-child { margin-left:5px;}

@@ -1,6 +1,6 @@
 ﻿namespace VSS.Milan.Web.Core.Extentions
 {
-    public static class StringExtetions
+    public static class StringExtentions
     {
         public static bool IsInteger(this string value)
         {

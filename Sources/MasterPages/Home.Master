@@ -1,11 +1,21 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.Master.cs" Inherits="VSS.Milan.Web.MasterPages.Home"
     MasterPageFile="~/masterpages/BaseContent.master" %>
-
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
-    <asp:HyperLink runat="server" ID="russianNodeUrl" Text="RU"></asp:HyperLink>
-    <asp:HyperLink runat="server" ID="englishNodeUrl" Text="EN"></asp:HyperLink>
-    <br/>
-    <asp:Literal runat="server" ID="footerTopText"></asp:Literal>
-    <br/>
-    <asp:Literal runat="server" ID="footerBottomText"></asp:Literal>
+    <body class="splash">
+        <div class="wrapper">
+            <div class="splashContainer clearfix">
+                <asp:HyperLink runat="server" ID="russianNodeUrl" CssClass="rus"></asp:HyperLink>
+                <asp:HyperLink runat="server" ID="englishNodeUrl" CssClass="eng"></asp:HyperLink>
+            </div>
+            <div class="clear he">
+                <!---->
+            </div>
+        </div>
+        <div class="mainFooter">
+            <h2>
+                <asp:Literal runat="server" ID="footerTopText"></asp:Literal></h2>
+            <p>
+                <asp:Literal runat="server" ID="footerBottomText"></asp:Literal></p>
+        </div>
+    </body>
 </asp:Content>

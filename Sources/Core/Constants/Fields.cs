@@ -34,6 +34,8 @@
 
         public static class NewsOverview
         {
+            public const string ReadMoreText = "readMoreText";
+            public const string ArchiveText = "archiveText";
             public const string MediaPartnersNode = "mediaPartnersNode";
             public const string MediaPartnersTitle = "mediaPartnersTitle";
         }
@@ -41,6 +43,11 @@
         public static class NewsYear
         {
             public const string Archive = "archive";
+        }
+
+        public static class NewsItem
+        {
+            public const string Date = "date";
         }
 
         public static class MediaPartner

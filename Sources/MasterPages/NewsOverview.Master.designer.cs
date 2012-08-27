@@ -13,6 +13,15 @@ namespace VSS.Milan.Web.MasterPages {
     public partial class NewsOverview {
         
         /// <summary>
+        /// rptNews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptNews;
+        
+        /// <summary>
         /// uNewsNavigation control.
         /// </summary>
         /// <remarks>

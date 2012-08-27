@@ -46,13 +46,43 @@
             }
         }
 
-        public static List<Node> NewsYears
+        public static List<Node> AllNewsYears
         {
             get
             {
                 return NewsOverviewNode != null
                     ? NewsOverviewNode.GetChildNodesByType(DocumentTypes.NewsYear).Where(y => y.Name.IsInteger()
                         && y.Children.Count > 0).ToList()
+                    : null;
+            }
+        }
+
+        public static List<Node> NewsYears
+        {
+            get
+            {
+                return AllNewsYears != null
+                    ? AllNewsYears.Where(y => !y.PropertyAsBool(Fields.NewsYear.Archive)).ToList()
+                    : null;
+            }
+        }
+
+        public static List<Node> ArchiveNewsYears
+        {
+            get
+            {
+                return AllNewsYears != null
+                    ? AllNewsYears.Where(y => y.PropertyAsBool(Fields.NewsYear.Archive)).ToList()
+                    : null;
+            }
+        }
+
+        public static List<Node> NewsNodes
+        {
+            get
+            {
+                return NewsOverviewNode != null
+                    ? NewsOverviewNode.GetDescendantNodesByType(DocumentTypes.NewsItem).OrderByDescending(x => x.PropertyAsDateTime(Fields.NewsItem.Date)).ToList()
                     : null;
             }
         }
@@ -71,6 +101,21 @@
             {
                 return MediaPartnersNode != null ? MediaPartnersNode.GetChildNodesByType(DocumentTypes.MediaPartner).ToList() : null;
             }
+        }
+
+        public static List<Node> GetNewsNodes(int year, int month)
+        {
+            if (year < 0 || month < 1 || month > 12)
+            {
+                return null;
+            }
+
+            return NewsNodes.Where(n => n.PropertyAsDateTime(Fields.NewsItem.Date).Year == year && n.PropertyAsDateTime(Fields.NewsItem.Date).Month == month).ToList();
+        }
+
+        public static List<Node> GetArchiveNewsNodes(int year)
+        {
+            return NewsNodes.Where(n => n.PropertyAsDateTime(Fields.NewsItem.Date).Year == year).ToList();
         }
     }
 }

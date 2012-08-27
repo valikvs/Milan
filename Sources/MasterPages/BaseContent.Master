@@ -7,8 +7,8 @@
         <asp:Literal runat="server" ID="pageTitle"></asp:Literal>
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" ID="mDescription" runat="server" Visible="false" clientidmode="Static" />
-    <meta name="keywords" ID="mKeywords" runat="server" Visible="false" clientidmode="Static" />
+    <meta name="description" id="mDescription" runat="server" visible="false" clientidmode="Static" />
+    <meta name="keywords" id="mKeywords" runat="server" visible="false" clientidmode="Static" />
     <link href="/css/main.css" rel="stylesheet" type="text/css" />
     <script type="text/javaScript" src="/scripts/jquery-1.7.1.min.js"></script>
     <script type="text/javaScript" src="/scripts/actions.js"></script>
@@ -24,8 +24,6 @@
         })();
     </script>
 </head>
-<body>
-    <asp:ContentPlaceHolder ID="ContentPlaceHolderBase" runat="server">
-    </asp:ContentPlaceHolder>
-</body>
+<asp:contentplaceholder id="ContentPlaceHolderBase" runat="server">
+    </asp:contentplaceholder>
 </html>

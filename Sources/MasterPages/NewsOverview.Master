@@ -1,22 +1,35 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NewsOverview.Master.cs"
     Inherits="VSS.Milan.Web.MasterPages.NewsOverview" MasterPageFile="~/masterpages/MainContent.master" %>
-<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls" Assembly="umbraco" %>
-
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<%@ Import Namespace="umbraco.NodeFactory" %>
+<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
+    Assembly="umbraco" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-
-  <div class="mainCol clearfix newsCol"> <img src="/pictures/_tmp1.jpg" width="277" height="199" alt="pic"> <img src="/pictures/_tmp1.jpg" width="277" height="199" alt="pic">
-    <h6> 28 декабря 2009</h6>
-    <p>Some text.</p>
-    <h6> 28 декабря 2009</h6>
-    <p>Some text.</p>
-    <div class="social"> <img src="/pictures/_tmp2.png" width="58" height="20" alt="like"></div>
-  </div>
-  <div class="sideCol">
-    <umbraco:Macro ID="uNewsNavigation" Alias="NewsNavigation" runat="server" />
-    <umbraco:Macro ID="uMediaPartners" Alias="MediaPartners" runat="server" />
-  </div>
-  <div class="clear he">
-    <!---->
-  </div>
-
+    <div class="mainCol clearfix newsCol">
+        <asp:Repeater runat="server" id="rptNews">
+        <ItemTemplate>
+                <div class="newsContainer clearfix"> <a href="#"><img src="/pictures/_tmp1.jpg" width="190" height="140" alt="pic"></a>
+      <div class="col">
+        <h6>.28 декабря 2009 <%# ((Node)Container.DataItem).Property(Fields.NewsItem.Date)%></h6>
+        <p>Швейцарская часовая компания проявляет интерес к белорусскому 
+          рынку и даже в период кризиса считает открытие монобрендового 
+          магазина Tissot перспективным. Ульрих Фишер, вице-президент по 
+          продажам Tissot, заявил: “Сегодня мы говорим не только о торговой 
+          марке Tissot, но и о новом проекте, который создаем в Минске. Tissot - 
+          это международный инновационный бренд. Если вести речь о 
+          глобализации, вполне естественно говорить об открытии такого проекта 
+          в Беларуси. </p>
+        <a href="#" class="link">... читать далее </a> </div>
+    </div>
+        </ItemTemplate>
+    </asp:Repeater>
+    </div>
+    <div class="sideCol">
+        <umbraco:Macro ID="uNewsNavigation" Alias="NewsNavigation" runat="server" />
+        <umbraco:Macro ID="uMediaPartners" Alias="MediaPartners" runat="server" />
+    </div>
+    <div class="clear he">
+        <!---->
+    </div>
 </asp:Content>

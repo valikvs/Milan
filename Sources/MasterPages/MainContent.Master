@@ -1,24 +1,25 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainContent.master.cs"
     Inherits="VSS.Milan.Web.MasterPages.MainContent" MasterPageFile="~/masterpages/BaseContent.master" %>
 <%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls" Assembly="umbraco" %>
-
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
-    <div class="wrapper">
-        <div class="mainTop clearfix">
-            <umbraco:Macro ID="uHeaderButtons" Alias="HeaderButtons" runat="server" />
-            <a href="#" class="logo" runat="server" ID="logoUrl" clientidmode="Static"></a>
-            <umbraco:Macro ID="uTopNav" Alias="MainNavigation" runat="server" />
+    <body>
+        <div class="wrapper">
+            <div class="mainTop clearfix">
+                <umbraco:Macro ID="uHeaderButtons" Alias="HeaderButtons" runat="server" />
+                <a href="#" class="logo" runat="server" id="logoUrl" clientidmode="Static"></a>
+                <umbraco:Macro ID="uTopNav" Alias="MainNavigation" runat="server" />
+            </div>
+            <asp:contentplaceholder id="ContentPlaceHolderMain" runat="server">
+        </asp:contentplaceholder>
         </div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
-    <div class="mainFooter">
-        <div class="side">
-            <asp:Literal runat="server" ID="footerRightText"></asp:Literal>
+        <div class="mainFooter">
+            <div class="side">
+                <asp:literal runat="server" id="footerRightText"></asp:literal>
+            </div>
+            <p>
+                <asp:literal runat="server" id="footerLeftText"></asp:literal>
+            </p>
+            <umbraco:Macro ID="uBottomNav" Alias="MainNavigation" runat="server" />
         </div>
-        <p>
-            <asp:Literal runat="server" ID="footerLeftText"></asp:Literal>
-        </p>
-        <umbraco:Macro ID="uBottomNav" Alias="MainNavigation" runat="server" />
-    </div>
+    </body>
 </asp:Content>
