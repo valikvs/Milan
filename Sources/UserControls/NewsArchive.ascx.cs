@@ -1,7 +1,6 @@
 ﻿namespace VSS.Milan.Web.UserControls
 {
     using System;
-
     using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
     using VSS.Milan.Web.Core.Utils;
@@ -30,12 +29,7 @@
             }
 
             var archiveYears = NodeHelper.ArchiveNewsYears;
-            if (archiveYears != null && archiveYears.Count > 0)
-            {
-                this.rptArchive.DataSource = archiveYears;
-                this.rptArchive.DataBind();
-            }
-            else
+            if (archiveYears == null || archiveYears.Count <= 0)
             {
                 this.Visible = false;
             }

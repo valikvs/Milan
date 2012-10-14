@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using umbraco.NodeFactory;
+    using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Utils;
 
     public partial class NewsOverview : System.Web.UI.MasterPage
@@ -29,9 +30,9 @@
 
         private List<Node> GetNews()
         {
-            var yearParam = this.Page.Request.QueryString["y"];
-            var monthParam = this.Page.Request.QueryString["m"];
-            var archiveParam = this.Page.Request.QueryString["archive"];
+            var yearParam = this.Page.Request.QueryString[Parameters.News.Year];
+            var monthParam = this.Page.Request.QueryString[Parameters.News.Month];
+            var archiveParam = this.Page.Request.QueryString[Parameters.News.Archive];
 
             if (!string.IsNullOrEmpty(yearParam)
                 && !string.IsNullOrEmpty(monthParam))

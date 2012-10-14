@@ -1,22 +1,16 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NewsArchive.ascx.cs" Inherits="VSS.Milan.Web.UserControls.NewsArchive" %>
-<%@ Import Namespace="umbraco.NodeFactory" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
 
+<% if (NodeHelper.ArchiveNewsYears.Count > 0) { %>
 <ul class="menu">
     <li><a href="#"><asp:Literal runat="server" ID="archiveTitle"></asp:Literal></a>
-    <ul>
-<asp:Repeater runat="server" ID="rptArchive">
-    <HeaderTemplate>
         <ul>
-    </HeaderTemplate>
-    <ItemTemplate>
-        <li><a href="<%=this.ArchiveUrl %>?archive=<%# ((Node)Container.DataItem).Name%>">
-            <%# ((Node)Container.DataItem).Name%></a></li>
-    </ItemTemplate>
-    <FooterTemplate>
+        <% foreach (var year in NodeHelper.ArchiveNewsYears) { %>
+            <li><a href="<%=this.ArchiveUrl %>?archive=<%= year.Name%>">
+                <%= year.Name%></a></li>
+        <% } %>
         </ul>
-    </FooterTemplate>
-</asp:Repeater>
-</ul>
     </li>
 </ul>
+<% } %>
 

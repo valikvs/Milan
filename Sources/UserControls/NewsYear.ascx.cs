@@ -1,8 +1,9 @@
 ﻿namespace VSS.Milan.Web.UserControls
 {
-    using System;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+    using System.Web.UI;
     using umbraco;
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
@@ -10,9 +11,15 @@
     using VSS.Milan.Web.Core.Extentions;
     using VSS.Milan.Web.Core.Utils;
 
-    public partial class NewsYear : System.Web.UI.UserControl
+    public partial class NewsYear : UserControl
     {
-        public Node DataSource
+        public Node YearNode
+        {
+            get;
+            set;
+        }
+
+        public bool IsCurrentYear
         {
             get;
             set;
@@ -22,31 +29,26 @@
         {
             get
             {
-                return (NodeHelper.NewsOverviewNode != null && this.DataSource != null) ? NodeHelper.NewsOverviewNode.Url + "?y=" + this.DataSource.Name : string.Empty;
+                return (NodeHelper.NewsOverviewNode != null && this.YearNode != null) ? NodeHelper.NewsOverviewNode.Url + "?y=" + this.YearNode.Name : string.Empty;
             }
         }
 
-        protected void Page_Load(object sender, EventArgs e)
+        public List<Month> Months
         {
-            if (this.DataSource == null)
+            get
             {
-                return;
-            }
+                if (this.YearNode == null)
+                {
+                    return null;
+                }
 
-            var dates = this.DataSource.GetChildNodesByType(DocumentTypes.NewsItem).Select(n => n.PropertyAsDateTime(Fields.NewsItem.Date)).ToList();
-            var formatInfo = CultureInfo.CurrentCulture.DateTimeFormat;
-            var months = dates.Select(n => n.Month)
-                          .Distinct().OrderByDescending(n => n).Select(
-                              n => new Month { Number = n, Title = formatInfo.GetMonthName(n).ToLower() }).ToList();
+                var dates = this.YearNode.GetChildNodesByType(DocumentTypes.NewsItem).Select(n => n.PropertyAsDateTime(Fields.NewsItem.Date)).ToList();
+                var formatInfo = CultureInfo.CurrentCulture.DateTimeFormat;
+                var months = dates.Select(n => n.Month)
+                              .Distinct().OrderByDescending(n => n).Select(
+                                  n => new Month { Number = n, Title = formatInfo.GetMonthName(n).ToLower() }).ToList();
 
-            if (months.Count > 0)
-            {
-                this.rptMonths.DataSource = months;
-                this.rptMonths.DataBind();
-            }
-            else
-            {
-                this.rptMonths.Visible = false;
+                return months;
             }
         }
     }
