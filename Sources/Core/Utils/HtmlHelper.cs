@@ -3,11 +3,43 @@
     using System.IO;
     using System.Text;
     using System.Web.UI;
+    using System.Web.UI.WebControls;
     using umbraco.NodeFactory;
+    using VSS.Milan.Web.Core.Constants;
+    using VSS.Milan.Web.Core.Extentions;
     using VSS.Milan.Web.UserControls;
 
     public static class HtmlHelper
     {
+        public static string NewsImage(Node node, string fieldName)
+        {
+            var mediaUrl = node.PropertyAsMediaUrl(fieldName);
+            if (string.IsNullOrEmpty(mediaUrl))
+            {
+                return string.Empty;
+            }
+
+            var image = new Image { ImageUrl = mediaUrl, Width = 277, Height = 199, AlternateText = "pic" };
+
+            return RenderControl(image);
+        }
+
+        public static string NewsOverviewImage(Node node)
+        {
+            var mediaUrl = node.PropertyAsMediaUrl(Fields.NewsItem.Image1) ?? node.PropertyAsMediaUrl(Fields.NewsItem.Image2);
+            if (string.IsNullOrEmpty(mediaUrl))
+            {
+                return string.Empty;
+            }
+
+            var control = new HyperLink { NavigateUrl = node.Url };
+            var image = new Image
+                { ImageUrl = mediaUrl, Width = 190, Height = 140 };
+            control.Controls.Add(image);
+
+            return RenderControl(control);
+        }
+
         public static string NewsYear(Control self, Node year, bool current)
         {
             var control = (NewsYear)LoadControl("~/UserControls/NewsYear.ascx", self);

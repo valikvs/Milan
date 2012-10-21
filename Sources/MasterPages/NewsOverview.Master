@@ -3,27 +3,23 @@
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 <%@ Import Namespace="umbraco.NodeFactory" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
 <%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
     Assembly="umbraco" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="mainCol clearfix newsCol">
         <asp:Repeater runat="server" id="rptNews">
-        <ItemTemplate>
-                <div class="newsContainer clearfix"> <a href="#"><img src="/pictures/_tmp1.jpg" width="190" height="140" alt="pic"></a>
-      <div class="col">
-        <h6>.28 декабря 2009 <%# ((Node)Container.DataItem).Property(Fields.NewsItem.Date)%></h6>
-        <p>Швейцарская часовая компания проявляет интерес к белорусскому 
-          рынку и даже в период кризиса считает открытие монобрендового 
-          магазина Tissot перспективным. Ульрих Фишер, вице-президент по 
-          продажам Tissot, заявил: “Сегодня мы говорим не только о торговой 
-          марке Tissot, но и о новом проекте, который создаем в Минске. Tissot - 
-          это международный инновационный бренд. Если вести речь о 
-          глобализации, вполне естественно говорить об открытии такого проекта 
-          в Беларуси. </p>
-        <a href="#" class="link">... читать далее </a> </div>
-    </div>
-        </ItemTemplate>
-    </asp:Repeater>
+            <ItemTemplate>
+        <div class="newsContainer clearfix">
+            <%# HtmlHelper.NewsOverviewImage((Node)Container.DataItem)%>
+            <div class="col">
+                <h6><%# ((Node)Container.DataItem).PropertyAsDateTime(Fields.NewsItem.Date).ToString(DateFormats.Default)%></h6>
+                <p><%# ((Node)Container.DataItem).Property(Fields.NewsItem.PreveiwText)%></p>
+                <a href="<%# ((Node)Container.DataItem).Url%>" class="link"><%=NodeHelper.NewsOverviewNode.Property(Fields.NewsOverview.ReadMoreText)%></a>
+            </div>
+        </div>
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
     <div class="sideCol">
         <umbraco:Macro ID="uNewsNavigation" Alias="NewsNavigation" runat="server" />

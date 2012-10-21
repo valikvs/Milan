@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NewsItem.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.NewsItem" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
+<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
+    Assembly="umbraco" %>
+<%@ Register TagPrefix="uc" Src="~/UserControls/Sharing.ascx" TagName="Sharing" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <div class="mainCol clearfix newsCol">
+        <%=HtmlHelper.NewsImage(CurrentNode, Fields.NewsItem.Image1)%>
+        <%=HtmlHelper.NewsImage(CurrentNode, Fields.NewsItem.Image2)%>
+        <h6><%= CurrentNode.PropertyAsDateTime(Fields.NewsItem.Date).ToString(DateFormats.Default)%></h6>
+        <%=CurrentNode.Property(Fields.NewsItem.Text)%>
+        <uc:Sharing runat="server"/>
+    </div>
+    <div class="sideCol">
+        <umbraco:Macro ID="uNewsNavigation" Alias="NewsNavigation" runat="server" />
+        <umbraco:Macro ID="uMediaPartners" Alias="MediaPartners" runat="server" />
+    </div>
+    <div class="clear he">
+        <!---->
+    </div>
+</asp:Content>

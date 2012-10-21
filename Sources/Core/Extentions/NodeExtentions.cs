@@ -72,6 +72,17 @@
             return !int.TryParse(node.GetProperty(propertyName).Value, out propValue) ? null : new Media(propValue);
         }
 
+        public static string PropertyAsMediaUrl(this INode node, string propertyName)
+        {
+            var media = node.PropertyAsMedia(propertyName);
+            if (media == null || media.getProperty("umbracoFile") == null)
+            {
+                return null;
+            }
+
+            return media.getProperty("umbracoFile").Value.ToString();
+        }
+
         public static DateTime PropertyAsDateTime(this INode node, string propertyName)
         {
             var propValue = DateTime.MinValue;

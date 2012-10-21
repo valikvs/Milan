@@ -48,6 +48,10 @@
         public static class NewsItem
         {
             public const string Date = "date";
+            public const string Image1 = "image1";
+            public const string Image2 = "image2";
+            public const string PreveiwText = "previewText";
+            public const string Text = "text";
         }
 
         public static class MediaPartner
