@@ -87,6 +87,24 @@
             }
         }
 
+        public static Node RecommendationsNode
+        {
+            get
+            {
+                return LanguageNode.GetChildNodesByType(DocumentTypes.Recommendations).First();
+            }
+        }
+
+        public static List<Node> AllRecommendations
+        {
+            get
+            {
+                return RecommendationsNode != null
+                    ? RecommendationsNode.GetChildNodesByType(DocumentTypes.Recommendation).ToList()
+                    : null;
+            }
+        }
+
         public static Node MediaPartnersNode
         {
             get

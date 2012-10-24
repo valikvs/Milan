@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Recommendations.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.Recommendations" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
+<%@ Import Namespace="umbraco.NodeFactory" %>
+<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls" Assembly="umbraco" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <div class="mainCol clearfix galleryRecom">
+        <ul class="previewAll clearfix">
+            <asp:repeater runat="server" id="rptRecommendations">
+                <ItemTemplate>
+            <%# HtmlHelper.Recomendation((Node)Container.DataItem)%>
+                </ItemTemplate>
+            </asp:repeater>
+        </ul>
+    </div>
+    <div class="sideCol">
+        <umbraco:Macro ID="uRecommendationsNavigation" Alias="RecommendationsNavigation" runat="server" />
+    </div>
+</asp:Content>

@@ -54,6 +54,17 @@
             public const string Text = "text";
         }
 
+        public static class Recommendations
+        {
+            public const string ViewAllText = "viewAllText";
+        }
+
+        public static class Recommendation
+        {
+            public const string Title = "title";
+            public const string Image = "image";
+        }
+
         public static class MediaPartner
         {
             public const string Title = "title";

@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-	$(".sideCol .menu > li > a").click(function() {
-		$(this).parent().toggleClass("expanded");
+	$(".sideCol .menu .hasSubMenu > a").click(function() {
 		$(this).parent().children("ul").toggle("fast");
+		$(this).parent().toggleClass("expanded");
 		return false
 	});
 	

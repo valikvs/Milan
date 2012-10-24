@@ -11,6 +11,19 @@
 
     public static class HtmlHelper
     {
+        public static string Image(Node node, string fieldName)
+        {
+            var mediaUrl = node.PropertyAsMediaUrl(fieldName);
+            if (string.IsNullOrEmpty(mediaUrl))
+            {
+                return string.Empty;
+            }
+
+            var image = new Image { ImageUrl = mediaUrl };
+
+            return RenderControl(image);
+        }
+
         public static string NewsImage(Node node, string fieldName)
         {
             var mediaUrl = node.PropertyAsMediaUrl(fieldName);
@@ -38,6 +51,23 @@
             control.Controls.Add(image);
 
             return RenderControl(control);
+        }
+
+        public static string Recomendation(Node node)
+        {
+            var mediaUrl = node.PropertyAsMediaUrl(Fields.Recommendation.Image);
+            if (string.IsNullOrEmpty(mediaUrl))
+            {
+                return string.Empty;
+            }
+
+            var image = new Image { ImageUrl = mediaUrl, Width = 185, Height = 251, AlternateText = "pic" };
+
+            var link = new HyperLink { CssClass = "fancybox", NavigateUrl = mediaUrl };
+            link.Attributes.Add("rel", "gallery1");
+            link.Controls.Add(image);
+
+            return RenderControl(link);
         }
 
         public static string NewsYear(Control self, Node year, bool current)

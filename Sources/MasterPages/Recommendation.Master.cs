@@ -3,7 +3,7 @@
     using System;
     using umbraco.NodeFactory;
 
-    public partial class NewsItem : System.Web.UI.MasterPage
+    public partial class Recommendation : System.Web.UI.MasterPage
     {
         protected static Node CurrentNode
         {
