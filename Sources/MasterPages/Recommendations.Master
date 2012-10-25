@@ -6,11 +6,11 @@
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="mainCol clearfix galleryRecom">
         <ul class="previewAll clearfix">
-            <asp:repeater runat="server" id="rptRecommendations">
+            <asp:Repeater runat="server" id="rptRecommendations">
                 <ItemTemplate>
             <%# HtmlHelper.Recomendation((Node)Container.DataItem)%>
                 </ItemTemplate>
-            </asp:repeater>
+            </asp:Repeater>
         </ul>
     </div>
     <div class="sideCol">

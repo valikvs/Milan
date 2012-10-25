@@ -225,7 +225,6 @@
     <Content Include="images\top_bg.png" />
     <Content Include="pictures\_tmp2.jpg" />
     <Content Include="scripts\actions.js" />
-    <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="pictures\_tmp1.jpg" />
     <Content Include="pictures\_tmp2.png" />
     <Content Include="scripts\jquery-1.8.0.min.js" />
@@ -285,7 +284,7 @@ XCOPY "$(ProjectDir)MasterPages\*.master" "..\..\Umbraco\masterpages\" /Y
 XCOPY "$(ProjectDir)css\*.*" "..\..\Umbraco\css\" /Y
 XCOPY "$(ProjectDir)fonts\*.*" "..\..\Umbraco\fonts\" /Y
 XCOPY "$(ProjectDir)images\*.*" "..\..\Umbraco\images\" /Y /E
-XCOPY "$(ProjectDir)js\*.*" "..\..\Umbraco\scripts\" /Y
+XCOPY "$(ProjectDir)scripts\*.*" "..\..\Umbraco\scripts\" /Y
 XCOPY "$(ProjectDir)pictures\*.*" "..\..\Umbraco\pictures\" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

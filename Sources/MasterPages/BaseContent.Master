@@ -15,6 +15,11 @@
     <script type="text/javaScript" src="/scripts/jquery.ad-gallery.min.js"></script>
     <script type="text/javaScript" src="/scripts/jquery.fancybox.pack.js"></script>
     <script type="text/javaScript" src="/scripts/actions.js"></script>
+    <script type="text/javaScript">
+        $(document).ready(function () {
+            $(".fancybox").fancybox();
+        });
+    </script>
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-XXXXX-X']);
