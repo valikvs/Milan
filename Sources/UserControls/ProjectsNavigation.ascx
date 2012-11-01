@@ -7,14 +7,14 @@
 <% if (this.Sections.Count > 0) { %>
 <ul class="menu">
     <% foreach (var section in this.Sections) { %>
-    <li class="hasSubMenu<%if (NodeHelper.IsCurrentPath(section)) {%> expanded<% } %>"><a href="#"><%=section.Property(Fields.ProjectsSection.Title)%></a>
+    <li class="hasSubMenu<%if (NodeHelper.IsCurrentPath(section)) {%> expanded<% } %>"><a href="#"><%=section.Property(Fields.BaseContent.NavigationTitle)%></a>
     <ul>
         <% foreach (var year in NodeHelper.GetSectionYears(section))
            { %>
         <%= HtmlHelper.ProjectsYear(this, year)%>
         <% } %>    </ul>
     </li>
-    <li><a href="<%=section.Url%>"><%=ViewAllText%></a></li>
+    <li<%if (NodeHelper.IsCurrentNode(section)) {%> class="cur"<% } %>><a href="<%=section.Url%>"><%=ViewAllText%></a></li>
     <% } %>
 </ul>
 <% } %>

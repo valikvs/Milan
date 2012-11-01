@@ -1,10 +1,19 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProjectsSection.Master.cs"
     Inherits="VSS.Milan.Web.MasterPages.ProjectsSection" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 <%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
     Assembly="umbraco" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-    <div class="mainCol clearfix newsCol">
-
+    <div class="mainCol clearfix galleryCol">
+        <h3><%=CurrentNode.Property(Fields.ProjectsSection.Title)%></h3>
+        <%if (this.Projects.Count > 0){%>
+        <ul class="previewAll clearfix">
+            <%foreach (var project in this.Projects){%>
+            <li><a href="<%=project.Url%>"><img src="/pictures/_tmp2.jpg" width="188" height="141" alt="pic"></a></li>
+            <%}%>
+        </ul>
+        <%}%>
     </div>
     <div class="sideCol">
         <umbraco:Macro ID="uProjectsNavigation" Alias="ProjectsNavigation" runat="server" />

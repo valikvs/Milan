@@ -57,6 +57,8 @@
         public static class ProjectsOverview
         {
             public const string ViewAllText = "viewAllText";
+            public const string ViewNextProject = "viewNextProject";
+            public const string ViewPreviousProject = "viewPreviousProject";
         }
 
         public static class ProjectsSection
@@ -67,7 +69,6 @@
         public static class Project
         {
             public const string Title = "title";
-            public const string FullTitle = "fullTitle";
         }
 
         public static class Recommendations

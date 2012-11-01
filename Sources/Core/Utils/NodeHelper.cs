@@ -157,15 +157,77 @@
         public static List<Node> GetSectionYears(Node node)
         {
             return node != null ? 
-                node.GetDescendantNodesByType(DocumentTypes.ProjectsYear).Where(y => y.Children.Count > 0).OrderByDescending(x => x.Name).ToList() : 
+                node.GetChildNodesByType(DocumentTypes.ProjectsYear).Where(y => y.Children.Count > 0).ToList() : 
+                new List<Node>();
+        }
+
+        public static List<Node> GetSectionProjects(Node node)
+        {
+            return node != null ?
+                node.GetDescendantNodesByType(DocumentTypes.Project).ToList() :
                 new List<Node>();
         }
 
         public static List<Node> GetYearProjects(Node node)
         {
             return node != null ?
-                node.GetDescendantNodesByType(DocumentTypes.Project).ToList() :
+                node.GetChildNodesByType(DocumentTypes.Project).ToList() :
                 new List<Node>();
+        }
+
+        public static Node GetNextProject(Node node)
+        {
+            var section = node.Parent.Parent as Node;
+            if (section == null)
+            {
+                return null;
+            }
+
+            var projects = GetSectionProjects(section);
+            if (projects.Count < 2)
+            {
+                return null;
+            }
+
+            var index = projects.FindIndex(p => p.Id == node.Id);
+            if (index >= 0 && projects.Count - 1 > index)
+            {
+                return projects[++index];
+            }
+
+            return null;
+        }
+
+        public static Node GetPreviousProject(Node node)
+        {
+            var section = node.Parent.Parent as Node;
+            if (section == null)
+            {
+                return null;
+            }
+
+            var projects = GetSectionProjects(section);
+            if (projects.Count < 2)
+            {
+                return null;
+            }
+
+            var index = projects.FindIndex(p => p.Id == node.Id);
+            if (index > 0)
+            {
+                return projects[--index];
+            }
+
+            return null;
+        }
+
+        public static bool IsCurrentNode(Node node)
+        {
+            var currentNode = Node.GetCurrent();
+
+            return node != null
+                   && currentNode != null
+                   && node.Id == currentNode.Id;
         }
 
         public static bool IsCurrentPath(Node node)

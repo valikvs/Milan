@@ -6,7 +6,7 @@
 <li class="hasSubMenu<%if (NodeHelper.IsCurrentPath(this.YearNode)) {%> expanded<% } %>"><a href="#"><%=this.YearNode.Name %></a>
     <ul>
         <% foreach (var project in NodeHelper.GetYearProjects(this.YearNode)) { %>
-            <li><a href="<%=project.Url%>"><%=project.Property(Fields.Project.Title)%></a></li>
+            <li<%if (NodeHelper.IsCurrentNode(project)) {%> class="cur"<% } %>><a href="<%=project.Url%>"><%=project.Property(Fields.BaseContent.NavigationTitle)%></a></li>
         <% } %>
     </ul>
 </li>
