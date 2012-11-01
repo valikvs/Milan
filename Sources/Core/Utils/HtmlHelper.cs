@@ -79,6 +79,14 @@
             return RenderControl(control);
         }
 
+        public static string ProjectsYear(Control self, Node year)
+        {
+            var control = (ProjectsYear)LoadControl("~/UserControls/ProjectsYear.ascx", self);
+            control.YearNode = year;
+
+            return RenderControl(control);
+        }
+
         private static object LoadControl(string path, Control self)
         {
             Page page;

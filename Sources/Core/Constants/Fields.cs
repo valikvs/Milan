@@ -54,6 +54,22 @@
             public const string Text = "text";
         }
 
+        public static class ProjectsOverview
+        {
+            public const string ViewAllText = "viewAllText";
+        }
+
+        public static class ProjectsSection
+        {
+            public const string Title = "title";
+        }
+
+        public static class Project
+        {
+            public const string Title = "title";
+            public const string FullTitle = "fullTitle";
+        }
+
         public static class Recommendations
         {
             public const string ViewAllText = "viewAllText";

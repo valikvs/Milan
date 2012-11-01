@@ -1,0 +1,15 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProjectsSection.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.ProjectsSection" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
+    Assembly="umbraco" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <div class="mainCol clearfix newsCol">
+
+    </div>
+    <div class="sideCol">
+        <umbraco:Macro ID="uProjectsNavigation" Alias="ProjectsNavigation" runat="server" />
+    </div>
+    <div class="clear he">
+        <!---->
+    </div>
+</asp:Content>

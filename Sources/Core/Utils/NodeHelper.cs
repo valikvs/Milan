@@ -63,7 +63,7 @@
             {
                 return AllNewsYears != null
                     ? AllNewsYears.Where(y => !y.PropertyAsBool(Fields.NewsYear.Archive)).ToList()
-                    : null;
+                    : new List<Node>();
             }
         }
 
@@ -84,6 +84,24 @@
                 return NewsOverviewNode != null
                     ? NewsOverviewNode.GetDescendantNodesByType(DocumentTypes.NewsItem).OrderByDescending(x => x.PropertyAsDateTime(Fields.NewsItem.Date)).ToList()
                     : null;
+            }
+        }
+
+        public static Node ProjectsOverviewNode
+        {
+            get
+            {
+                return LanguageNode.GetChildNodesByType(DocumentTypes.ProjectsOverview).First();
+            }
+        }
+
+        public static List<Node> ProjectsSections
+        {
+            get
+            {
+                return ProjectsOverviewNode != null ?
+                    ProjectsOverviewNode.GetChildNodesByType(DocumentTypes.ProjectsSection).Where(y => y.Children.Count > 0).ToList()
+                    : new List<Node>();
             }
         }
 
@@ -134,6 +152,29 @@
         public static List<Node> GetArchiveNewsNodes(int year)
         {
             return NewsNodes.Where(n => n.PropertyAsDateTime(Fields.NewsItem.Date).Year == year).ToList();
+        }
+
+        public static List<Node> GetSectionYears(Node node)
+        {
+            return node != null ? 
+                node.GetDescendantNodesByType(DocumentTypes.ProjectsYear).Where(y => y.Children.Count > 0).OrderByDescending(x => x.Name).ToList() : 
+                new List<Node>();
+        }
+
+        public static List<Node> GetYearProjects(Node node)
+        {
+            return node != null ?
+                node.GetDescendantNodesByType(DocumentTypes.Project).ToList() :
+                new List<Node>();
+        }
+
+        public static bool IsCurrentPath(Node node)
+        {
+            var currentNode = Node.GetCurrent();
+            
+            return node != null
+                   && currentNode != null
+                   && currentNode.GetAncestorOrSelfNodes().Count(n => n.Id == node.Id) == 1;
         }
     }
 }
