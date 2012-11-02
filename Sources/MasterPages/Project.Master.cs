@@ -61,7 +61,7 @@
         {
             get
             {
-                return this.images ?? (this.ImageFolder != null ? this.ImageFolder.Children.ToList() : new List<Media>());
+                return this.images ?? (this.images = this.ImageFolder != null ? this.ImageFolder.Children.ToList() : new List<Media>());
             }
         }
 
