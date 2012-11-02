@@ -72,15 +72,34 @@
             return !int.TryParse(node.GetProperty(propertyName).Value, out propValue) ? null : new Media(propValue);
         }
 
-        public static string PropertyAsMediaUrl(this INode node, string propertyName)
+        public static Media PropertyAsMediaFolder(this INode node, string propertyName)
         {
+            var folderType = MediaType.GetByAlias("folder");
             var media = node.PropertyAsMedia(propertyName);
+
+            if (media == null)
+            {
+                return null;
+            }
+
+            return media.ContentType.Id == folderType.Id ? media : null;
+        }
+
+        public static string AsMediaUrl(this Media media)
+        {
             if (media == null || media.getProperty("umbracoFile") == null)
             {
                 return null;
             }
 
             return media.getProperty("umbracoFile").Value.ToString();
+        }
+
+        public static string PropertyAsMediaUrl(this INode node, string propertyName)
+        {
+            var media = node.PropertyAsMedia(propertyName);
+
+            return media.AsMediaUrl();
         }
 
         public static DateTime PropertyAsDateTime(this INode node, string propertyName)

@@ -69,6 +69,7 @@
         public static class Project
         {
             public const string Title = "title";
+            public const string ImageFolder = "imageFolder";
         }
 
         public static class Recommendations

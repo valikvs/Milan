@@ -76,6 +76,7 @@
     <Compile Include="Core\Utils\HtmlHelper.cs" />
     <Compile Include="Core\Utils\Helper.cs" />
     <Compile Include="Core\Utils\NodeHelper.cs" />
+    <Compile Include="Core\Utils\UrlHelper.cs" />
     <Compile Include="MasterPages\BaseContent.Master.cs">
       <DependentUpon>BaseContent.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

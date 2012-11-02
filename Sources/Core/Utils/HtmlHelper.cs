@@ -3,7 +3,9 @@
     using System.IO;
     using System.Text;
     using System.Web.UI;
+    using System.Web.UI.HtmlControls;
     using System.Web.UI.WebControls;
+    using umbraco.cms.businesslogic.media;
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
@@ -32,7 +34,7 @@
                 return string.Empty;
             }
 
-            var image = new Image { ImageUrl = mediaUrl, Width = 277, Height = 199, AlternateText = "pic" };
+            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "277"), AlternateText = "pic" };
 
             return RenderControl(image);
         }
@@ -46,11 +48,27 @@
             }
 
             var control = new HyperLink { NavigateUrl = node.Url };
-            var image = new Image
-                { ImageUrl = mediaUrl, Width = 190, Height = 140 };
+            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "190") };
             control.Controls.Add(image);
 
             return RenderControl(control);
+        }
+
+        public static string ProjectImage(Media media)
+        {
+            var mediaUrl = media.AsMediaUrl();
+            if (string.IsNullOrEmpty(mediaUrl))
+            {
+                return string.Empty;
+            }
+
+            var item = new HtmlGenericControl("li");
+            var url = new HyperLink { NavigateUrl = mediaUrl };
+            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "113", "Height", "85") };
+            url.Controls.Add(image);
+            item.Controls.Add(url);
+
+            return RenderControl(item);
         }
 
         public static string Recomendation(Node node)
@@ -61,7 +79,7 @@
                 return string.Empty;
             }
 
-            var image = new Image { ImageUrl = mediaUrl, Width = 185, Height = 251, AlternateText = "pic" };
+            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "185"), AlternateText = "pic" };
 
             var link = new HyperLink { CssClass = "fancybox", NavigateUrl = mediaUrl };
             link.Attributes.Add("rel", "gallery1");

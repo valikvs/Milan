@@ -2,6 +2,7 @@
     Inherits="VSS.Milan.Web.MasterPages.Project" MasterPageFile="~/masterpages/MainContent.master" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
 <%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
     Assembly="umbraco" %>
 <%@ Register TagPrefix="uc" TagName="Sharing" Src="~/UserControls/Sharing.ascx" %>
@@ -14,23 +15,20 @@
     <%if (this.PreviousProject != null){%>
     <a href="<%=this.PreviousProject.Url%>" class="prevProject" title="<%=this.ProjectsOverview.Property(Fields.ProjectsOverview.ViewPreviousProject) %>"></a>
     <%}%>
+    <%if (this.Images.Count > 0){%>
     <div id="gallery" class="ad-gallery">
       <div class="ad-image-wrapper"> </div>
       <div class="ad-nav">
         <div class="ad-thumbs">
           <ul class="ad-thumb-list">
-            <li> <a href="/pictures/_tmp2.jpg"> <img src="/pictures/_tmp1.jpg" width="113" height="85" title="A title for 10.jpg" alt="This is a nice, and incredibly descriptive, description of the image 10.jpg"> </a> </li>
-            <li> <a href="/pictures/_tmp1.jpg"> <img src="/pictures/_tmp2.jpg" width="113" height="85" alt=""> </a> </li>
-            <li> <a href="/pictures/_tmp2.jpg"> <img src="/pictures/_tmp1.jpg" width="113" height="85" title="A title for 10.jpg" alt="This is a nice, and incredibly descriptive, description of the image 10.jpg"> </a> </li>
-            <li> <a href="/pictures/_tmp2.jpg"> <img src="/pictures/_tmp1.jpg" width="113" height="85" title="A title for 10.jpg" alt="This is a nice, and incredibly descriptive, description of the image 10.jpg"> </a> </li>
-            <li> <a href="/pictures/_tmp2.jpg"> <img src="/pictures/_tmp1.jpg" width="113" height="85" title="A title for 10.jpg" alt="This is a nice, and incredibly descriptive, description of the image 10.jpg"> </a> </li>
-            <li> <a href="/pictures/_tmp1.jpg"> <img src="/pictures/_tmp2.jpg" width="113" height="85" title="A title for 10.jpg" alt="This is a nice, and incredibly descriptive, description of the image 10.jpg"> </a> </li>
-            <li> <a href="/pictures/_tmp2.jpg"> <img src="/pictures/_tmp1.jpg" width="113" height="85" title="A title for 10.jpg" alt="This is a nice, and incredibly descriptive, description of the image 10.jpg"> </a> </li>
-            <li> <a href="/pictures/_tmp2.jpg"> <img src="/pictures/_tmp1.jpg" width="113" height="85" title="A title for 10.jpg" alt="This is a nice, and incredibly descriptive, description of the image 10.jpg"> </a> </li>
+            <% foreach (var image in this.Images) { %>
+            <%=HtmlHelper.ProjectImage(image)%>
+            <% } %>
           </ul>
         </div>
       </div>
     </div>
+    <%}%>
     <uc:Sharing runat="server"/>
   </div>
     <div class="sideCol">
