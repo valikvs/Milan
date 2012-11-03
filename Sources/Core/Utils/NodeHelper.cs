@@ -105,6 +105,14 @@
             }
         }
 
+        public static Node StudioNode
+        {
+            get
+            {
+                return LanguageNode.GetChildNodesByType(DocumentTypes.Studio).First();
+            }
+        }
+
         public static Node RecommendationsNode
         {
             get

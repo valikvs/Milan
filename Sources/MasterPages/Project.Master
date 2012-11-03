@@ -21,9 +21,9 @@
       <div class="ad-nav">
         <div class="ad-thumbs">
           <ul class="ad-thumb-list">
-            <% foreach (var image in this.Images) { %>
+            <%foreach (var image in this.Images) {%>
             <%=HtmlHelper.ProjectImage(image)%>
-            <% } %>
+            <%}%>
           </ul>
         </div>
       </div>

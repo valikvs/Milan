@@ -72,6 +72,12 @@
             public const string ImageFolder = "imageFolder";
         }
 
+        public static class Studio
+        {
+            public const string Text = "text";
+            public const string ImageFolder = "imageFolder";
+        }
+
         public static class Recommendations
         {
             public const string ViewAllText = "viewAllText";

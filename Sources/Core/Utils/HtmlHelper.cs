@@ -71,6 +71,44 @@
             return RenderControl(item);
         }
 
+        public static string StudioImage(Media media)
+        {
+            var mediaUrl = media.AsMediaUrl();
+            if (string.IsNullOrEmpty(mediaUrl))
+            {
+                return string.Empty;
+            }
+
+            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "220"), AlternateText = "pic" };
+
+            return RenderControl(image);
+        }
+
+        public static string LeftNavigationItem(Node node)
+        {
+            if (node == null)
+            {
+                return string.Empty;
+            }
+
+            var item = new HtmlGenericControl("h2");
+            var title = new Literal { Text = node.Property(Fields.BaseContent.NavigationTitle) };
+
+            if (!NodeHelper.IsCurrentNode(node))
+            {
+                var url = new HyperLink
+                    { NavigateUrl = node.Url };
+                url.Controls.Add(title);
+                item.Controls.Add(url);
+            }
+            else
+            {
+                item.Controls.Add(title);
+            }
+
+            return RenderControl(item);
+        }
+
         public static string Recomendation(Node node)
         {
             var mediaUrl = node.PropertyAsMediaUrl(Fields.Recommendation.Image);

@@ -2,12 +2,13 @@
 {
     using System;
     using umbraco.NodeFactory;
-    using VSS.Milan.Web.Core.Constants;
-    using VSS.Milan.Web.Core.Extentions;
     using VSS.Milan.Web.Core.Utils;
 
     public partial class RecommendationsNavigation : System.Web.UI.UserControl
     {
+        private Node recommendationsNode;
+        private Node studioNode;
+
         protected static Node CurrentNode
         {
             get
@@ -16,32 +17,25 @@
             }
         }
 
-        protected bool IsCurrentNode(Node node)
+        protected Node RecommendationsNode
         {
-            if (node != null && CurrentNode != null)
+            get
             {
-                if (node.Id == CurrentNode.Id)
-                {
-                    return true;
-                }
+                return this.recommendationsNode ?? (this.recommendationsNode = NodeHelper.RecommendationsNode);
             }
+        }
 
-            return false;
+        protected Node StudioNode
+        {
+            get
+            {
+                return this.studioNode ?? (this.studioNode = NodeHelper.StudioNode);
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.Page.IsPostBack)
-            {
-                return;
-            }
 
-            var recommendationsNode = NodeHelper.RecommendationsNode;
-            if (recommendationsNode != null)
-            {
-                this.recommendationsTitle.Text = recommendationsNode.Property(Fields.BaseContent.NavigationTitle);
-                this.viewAllText.Text = recommendationsNode.Property(Fields.Recommendations.ViewAllText);
-            }
         }
     }
 }

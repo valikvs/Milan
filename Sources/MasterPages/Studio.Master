@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Studio.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.Studio" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <div class="mainCol clearfix newsCol">
+        <%=CurrentNode.Property(Fields.Studio.Text)%>
+    </div>
+    <div class="sideCol">
+        <%=HtmlHelper.LeftNavigationItem(CurrentNode)%>
+        <%=HtmlHelper.LeftNavigationItem(this.RecommendationsNode)%>
+        <%if (this.Images.Count > 0){%>
+        <div class="partners">
+            <%foreach (var image in this.Images) {%>
+            <%=HtmlHelper.StudioImage(image)%>
+            <%}%>
+        </div>
+        <%}%>
+    </div>
+    <div class="clear he">
+        <!---->
+    </div>
+</asp:Content>
