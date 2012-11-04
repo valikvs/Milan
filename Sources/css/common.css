@@ -100,10 +100,18 @@ h6 {font-size:12px; font-family: 'CenturyGothic';}
 .galleryRecom { padding-top:3px;}
 .galleryRecom .previewAll li { border:1px solid #a3a4a4;}
 
-
-
-
-
+/*contacts col*/
+.contactsCol h3 { padding-bottom:3px;}
+.contactsCol .map { float:right; width: 281px; height:275px;}
+.contactsCol .form { float:left; padding:40px 0 0 0; width:280px;}
+.contactsCol .form .row { padding:2px 0 2px 80px;}
+.contactsCol .form .row label { float:left; width:80px; margin-left:-80px; padding-top:1px;}
+.contactsCol .form .row label.error { color: #ff0000;}
+.contactsCol .form .row input[type="text"],
+.contactsCol .form .row input[type="password"],
+.contactsCol .form .row textarea {width:100%; -moz-box-sizing:border-box;  -webkit-box-sizing:border-box; box-sizing:border-box;}
+.contactsCol .form .row textarea {height:80px;}
+.contactsCol .form .row input[type="button"] { background:#8d8d8d; border:none; -webkit-border-radius: 3px; border-radius: 3px; color:#fff; cursor:pointer; text-align:center; width:100px; margin:0 0 10px 50px;}
 
 
 /*footer*/

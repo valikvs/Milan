@@ -9,8 +9,9 @@
                 <a href="#" class="logo" runat="server" id="logoUrl" clientidmode="Static"></a>
                 <umbraco:Macro ID="uTopNav" Alias="MainNavigation" runat="server" />
             </div>
-            <asp:contentplaceholder id="ContentPlaceHolderMain" runat="server">
-        </asp:contentplaceholder>
+            <form runat="server">
+            <asp:contentplaceholder id="ContentPlaceHolderMain" runat="server"></asp:contentplaceholder>
+            </form>
         </div>
         <div class="mainFooter">
             <div class="side">

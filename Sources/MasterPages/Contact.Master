@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Contact.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.Contact" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Register TagPrefix="uc" Src="~/UserControls/GoogleMap.ascx" TagName="GoogleMap" %>
+<%@ Register TagPrefix="uc" Src="~/UserControls/ContactForm.ascx" TagName="ContactForm" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+<%--    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type='text/javascript'>
+    $(document).ready(function () {
+        $('#map_container img').hide();
+        $('#map_container').googleMap('<umbraco:Item field="map" runat="server"></umbraco:Item>');
+    });
+    </script>--%>
+    <div class="mainCol clearfix contactsCol">
+        <uc:GoogleMap runat="server" ID="Maps"></uc:GoogleMap>
+        <h3><%=CurrentNode.Property(Fields.Contact.Title)%></h3>
+        <%=CurrentNode.Property(Fields.Contact.Text)%>
+        <uc:ContactForm runat="server" ID="ContactForm" />
+    </div>
+    <div class="sideCol">
+        <%=HtmlHelper.LeftNavigationItem(CurrentNode)%>
+    </div>
+    <div class="clear he">
+        <!---->
+    </div>
+</asp:Content>

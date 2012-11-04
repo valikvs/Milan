@@ -89,6 +89,22 @@
             public const string Image = "image";
         }
 
+        public static class Contact
+        {
+            public const string Title = "title";
+            public const string Text = "text";
+            public const string Map = "map";
+            public const string MarkerText = "markerText";
+            public const string FormTitle = "formTitle";
+            public const string EmailText = "emailText";
+            public const string NameText = "nameText";
+            public const string PhoneText = "phoneText";
+            public const string SubjectText = "subjectText";
+            public const string MessageText = "messageText";
+            public const string RequiredText = "requiredText";
+            public const string SendText = "sendText";
+        }
+
         public static class MediaPartner
         {
             public const string Title = "title";
