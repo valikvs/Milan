@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VSS.Milan.Web.UserControls {
+namespace VSS.Milan.Web.MasterPages {
     
     
-    public partial class NewsNavigation {
+    public partial class PartnersOverview {
     }
 }

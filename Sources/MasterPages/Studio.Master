@@ -18,7 +18,4 @@
         </div>
         <%}%>
     </div>
-    <div class="clear he">
-        <!---->
-    </div>
 </asp:Content>

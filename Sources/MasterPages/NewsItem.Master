@@ -18,7 +18,4 @@
         <umbraco:Macro ID="uNewsNavigation" Alias="NewsNavigation" runat="server" />
         <umbraco:Macro ID="uMediaPartners" Alias="MediaPartners" runat="server" />
     </div>
-    <div class="clear he">
-        <!---->
-    </div>
 </asp:Content>

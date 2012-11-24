@@ -11,6 +11,9 @@
             </div>
             <form runat="server">
             <asp:contentplaceholder id="ContentPlaceHolderMain" runat="server"></asp:contentplaceholder>
+            <div class="clear he">
+                <!---->
+            </div>
             </form>
         </div>
         <div class="mainFooter">

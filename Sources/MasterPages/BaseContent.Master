@@ -16,6 +16,7 @@
     <script type="text/javaScript" src="/scripts/jquery.mousewheel-3.0.6.pack.js"></script>
     <script type="text/javaScript" src="/scripts/jquery.ad-gallery.min.js"></script>
     <script type="text/javaScript" src="/scripts/jquery.fancybox.pack.js"></script>
+    <script type="text/javaScript" src="/scripts/jquery.jcarousel.min.js"></script>
     <script type="text/javaScript" src="/scripts/actions.js"></script>
     <script type="text/javascript">
         var _gaq = _gaq || [];

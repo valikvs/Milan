@@ -18,7 +18,4 @@
     <div class="sideCol">
         <umbraco:Macro ID="uProjectsNavigation" Alias="ProjectsNavigation" runat="server" />
     </div>
-    <div class="clear he">
-        <!---->
-    </div>
 </asp:Content>

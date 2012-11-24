@@ -229,6 +229,34 @@
             return null;
         }
 
+        public static List<Node> GetPartnersPages(Node node)
+        {
+            return node != null
+                    ? node.GetChildNodesByType(DocumentTypes.PartnersPage).ToList()
+                    : null;
+        }
+
+        public static List<Node> GetPartnersPageColumns(Node node)
+        {
+            return node != null
+                    ? node.GetChildNodesByType(DocumentTypes.PartnersColumn).ToList()
+                    : null;
+        }
+
+        public static List<Node> GetPartnersColumnGroups(Node node)
+        {
+            return node != null
+                    ? node.GetChildNodesByType(DocumentTypes.PartnersGroup).ToList()
+                    : null;
+        }
+
+        public static List<Node> GetPartnersByGroup(Node node)
+        {
+            return node != null
+                    ? node.GetChildNodesByType(DocumentTypes.Partner).ToList()
+                    : null;
+        }
+
         public static bool IsCurrentNode(Node node)
         {
             var currentNode = Node.GetCurrent();

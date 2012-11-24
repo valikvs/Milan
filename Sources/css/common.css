@@ -31,6 +31,7 @@ h6 {font-size:12px; font-family: 'CenturyGothic';}
 /*header*/
 .mainTop {background:url(../images/top_bg.png) left bottom repeat-x; padding:30px 19px 12px 19px; font-size:11px; margin-bottom:52px; font-family: 'CenturyGothic';}
 .mainTop .logo {background:url(../images/logo_milan.png); width:292px; height:60px; float:left;}
+.mainTop .logoFlowers {background:url(../images/logo_milan_flowers.png); width:329px; height:75px; margin:-11px -22px -4px -15px; }
 .mainTop .side { float:right; margin:16px 0 0 0;}
 .mainTop .side a {display:inline-block; width:27px; height:26px; margin-left:2px;}
 .mainTop .side .rus { background:url(../images/icons/rus.png);}
@@ -102,16 +103,21 @@ h6 {font-size:12px; font-family: 'CenturyGothic';}
 
 /*contacts col*/
 .contactsCol h3 { padding-bottom:3px;}
-.contactsCol .map { float:right; width: 281px; height:275px;}
+.contactsCol .map { float:right;}
 .contactsCol .form { float:left; padding:40px 0 0 0; width:280px;}
 .contactsCol .form .row { padding:2px 0 2px 80px;}
 .contactsCol .form .row label { float:left; width:80px; margin-left:-80px; padding-top:1px;}
-.contactsCol .form .row label.error { color: #ff0000;}
 .contactsCol .form .row input[type="text"],
 .contactsCol .form .row input[type="password"],
 .contactsCol .form .row textarea {width:100%; -moz-box-sizing:border-box;  -webkit-box-sizing:border-box; box-sizing:border-box;}
 .contactsCol .form .row textarea {height:80px;}
-.contactsCol .form .row input[type="button"] { background:#8d8d8d; border:none; -webkit-border-radius: 3px; border-radius: 3px; color:#fff; cursor:pointer; text-align:center; width:100px; margin:0 0 10px 50px;}
+.contactsCol .form .row .btn{ background:#8d8d8d; border:none; -webkit-border-radius:3px; border-radius: 3px; color:#fff; cursor:pointer; text-align:center; width:100px; margin:0 0 10px 50px; display:inline-block; height:18px; vertical-align:middle; font-size:10px; font-family:Verdana, Geneva, sans-serif; padding-top:3px;}
+.contactsCol .form .row .btn:hover {text-decoration:none;}
+
+/*partners col*/
+.partnersCol h3 { margin-bottom:8px;}
+.partnersCol p { margin-bottom:8px;}
+.partnersCol .col {float:left; width:49%; padding-left:2px;}
 
 
 /*footer*/

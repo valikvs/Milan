@@ -93,18 +93,9 @@
 
             var item = new HtmlGenericControl("h2");
             var title = new Literal { Text = node.Property(Fields.BaseContent.NavigationTitle) };
-
-            if (!NodeHelper.IsCurrentNode(node))
-            {
-                var url = new HyperLink
-                    { NavigateUrl = node.Url };
-                url.Controls.Add(title);
-                item.Controls.Add(url);
-            }
-            else
-            {
-                item.Controls.Add(title);
-            }
+            var url = new HyperLink { NavigateUrl = node.Url };
+            url.Controls.Add(title);
+            item.Controls.Add(url);
 
             return RenderControl(item);
         }
@@ -139,6 +130,19 @@
         {
             var control = (ProjectsYear)LoadControl("~/UserControls/ProjectsYear.ascx", self);
             control.YearNode = year;
+
+            return RenderControl(control);
+        }
+
+        public static string Partner(Control self, Node partner)
+        {
+            if (partner == null)
+            {
+                return string.Empty;
+            }
+
+            var control = (Partner)LoadControl("~/UserControls/Partner.ascx", self);
+            control.PartnerNode = partner;
 
             return RenderControl(control);
         }

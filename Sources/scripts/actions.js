@@ -22,4 +22,6 @@ $(document).ready(function () {
         });
     });
 
+    $('#mycarousel').jcarousel({ scroll: 1 });
+
 });

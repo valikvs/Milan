@@ -4,10 +4,6 @@
 
     public partial class ProjectsYear : System.Web.UI.UserControl
     {
-        public Node YearNode
-        {
-            get;
-            set;
-        }
+        public Node YearNode { get; set; }
     }
 }

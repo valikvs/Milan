@@ -3,7 +3,7 @@
 
 <% if (NodeHelper.ArchiveNewsYears.Count > 0) { %>
 <ul class="menu">
-    <li><a href="#"><asp:Literal runat="server" ID="archiveTitle"></asp:Literal></a>
+    <li class="hasSubMenu"><a href="#"><asp:Literal runat="server" ID="archiveTitle"></asp:Literal></a>
         <ul>
         <% foreach (var year in NodeHelper.ArchiveNewsYears) { %>
             <li><a href="<%=this.ArchiveUrl %>?archive=<%= year.Name%>">

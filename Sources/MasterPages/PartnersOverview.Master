@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PartnersOverview.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.PartnersOverview" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <div class="mainCol clearfix partnersCol">
+        <ul id="mycarousel" class="jcarousel-skin-tango">
+            <% foreach (var page in NodeHelper.GetPartnersPages(CurrentNode)) { %>
+            <li>
+                <% foreach (var column in NodeHelper.GetPartnersPageColumns(page)) { %>
+                <div class="col">
+                    <% foreach (var group in NodeHelper.GetPartnersColumnGroups(column)) { %>
+                    <h3>
+                        <%=group.Property(Fields.PartnersGroup.Name) %></h3>
+                    <% foreach (var partner in NodeHelper.GetPartnersByGroup(group)) { %>
+                    <%=HtmlHelper.Partner(this, partner)%>
+                    <% } %>
+                    <% } %>
+                </div>
+                <% } %>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <div class="sideCol">
+        <%=HtmlHelper.LeftNavigationItem(CurrentNode)%>
+    </div>
+</asp:Content>

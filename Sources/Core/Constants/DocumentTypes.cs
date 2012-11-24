@@ -12,6 +12,11 @@
         public const string Studio = "Studio";
         public const string Recommendations = "Recommendations";
         public const string Recommendation = "Recommendation";
+        public const string PartnersOverview = "Partners Overview";
+        public const string PartnersPage = "PartnersPage";
+        public const string PartnersColumn = "PartnersColumn";
+        public const string PartnersGroup = "PartnersGroup";
+        public const string Partner = "Partner";
         public const string MediaPartner = "MediaPartner";
     }
 }

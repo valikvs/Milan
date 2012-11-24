@@ -2,8 +2,7 @@
 <%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
-<h2>
-    <%=ProjectsTitle%></h2>
+<%=HtmlHelper.LeftNavigationItem(NodeHelper.ProjectsOverviewNode)%>
 <% if (this.Sections.Count > 0) { %>
 <ul class="menu">
     <% foreach (var section in this.Sections) { %>

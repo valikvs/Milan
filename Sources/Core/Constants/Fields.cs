@@ -105,6 +105,19 @@
             public const string SendText = "sendText";
         }
 
+        public static class PartnersGroup
+        {
+            public const string Name = "name";
+        }
+
+        public static class Partner
+        {
+            public const string Title = "title";
+            public const string Address = "address";
+            public const string Phone = "phone";
+            public const string Url = "url";
+        }
+
         public static class MediaPartner
         {
             public const string Title = "title";

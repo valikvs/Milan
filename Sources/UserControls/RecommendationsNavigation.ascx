@@ -3,7 +3,6 @@
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 <%=HtmlHelper.LeftNavigationItem(this.RecommendationsNode)%>
-<%=HtmlHelper.LeftNavigationItem(this.StudioNode)%>
 <% if (NodeHelper.AllRecommendations.Count > 0)
    { %>
 <ul class="menu">
