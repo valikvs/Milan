@@ -2,6 +2,7 @@
 {
     public static class DocumentTypes
     {
+        public const string ContentPage = "ContentPage";
         public const string NewsOverview = "NewsOverview";
         public const string NewsYear = "NewsYear";
         public const string NewsItem = "NewsItem";

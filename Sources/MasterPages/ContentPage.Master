@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ContentPage.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.ContentPage" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <div class="mainCol clearfix">
+        <%=CurrentNode.Property(Fields.ContentPage.Text)%>
+    </div>
+    <div class="sideCol">
+        <h2>
+            <%=CurrentNode.Property(Fields.BaseContent.NavigationTitle)%>
+        </h2>
+    </div>
+</asp:Content>

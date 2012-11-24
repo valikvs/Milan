@@ -32,6 +32,11 @@
             public const string ShowInNavigation = "showInNavigation";
         }
 
+        public static class ContentPage
+        {
+            public const string Text = "text";
+        }
+
         public static class NewsOverview
         {
             public const string ReadMoreText = "readMoreText";
