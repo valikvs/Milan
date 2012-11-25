@@ -17,6 +17,7 @@
     <script type="text/javaScript" src="/scripts/jquery.ad-gallery.min.js"></script>
     <script type="text/javaScript" src="/scripts/jquery.fancybox.pack.js"></script>
     <script type="text/javaScript" src="/scripts/jquery.jcarousel.min.js"></script>
+    <script type="text/javaScript" src="/scripts/snow.js"></script>
     <script type="text/javaScript" src="/scripts/actions.js"></script>
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -29,6 +30,20 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
+    <asp:PlaceHolder runat="server" ID="plhSnowEffect" Visible="False">
+        <script type="text/javascript">
+            $(function () {
+                $(document).snow({ SnowImage: "/images/icons/snow.png" });
+            });
+        </script>
+    </asp:PlaceHolder>
+    <asp:PlaceHolder runat="server" ID="plhFlowersEffect" Visible="False">
+        <script type="text/javascript">
+            $(function () {
+                $(document).snow({ SnowImage: "/images/icons/flower.png" });
+            });
+        </script>
+    </asp:PlaceHolder>
 </head>
 <asp:contentplaceholder id="ContentPlaceHolderBase" runat="server">
     </asp:contentplaceholder>

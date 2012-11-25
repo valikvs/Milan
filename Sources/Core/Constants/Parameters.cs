@@ -2,6 +2,12 @@
 {
     public static class Parameters
     {
+        public static class Home
+        {
+            public const string Snow = "snow";
+            public const string Flowers = "flowers";
+        }
+
         public static class News
         {
             public const string Year = "y";

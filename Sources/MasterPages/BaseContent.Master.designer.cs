@@ -40,6 +40,24 @@ namespace VSS.Milan.Web.MasterPages {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mKeywords;
         
         /// <summary>
+        /// plhSnowEffect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plhSnowEffect;
+        
+        /// <summary>
+        /// plhFlowersEffect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plhFlowersEffect;
+        
+        /// <summary>
         /// ContentPlaceHolderBase control.
         /// </summary>
         /// <remarks>
