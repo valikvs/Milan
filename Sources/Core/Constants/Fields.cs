@@ -17,6 +17,7 @@
             public const string FooterTopText = "footerTopText";
             public const string FooterBottomText = "footerBottomText";
             public const string Effects = "effects";
+            public const string Email = "email";
         }
 
         public static class LanguageFolder
@@ -109,6 +110,9 @@
             public const string MessageText = "messageText";
             public const string RequiredText = "requiredText";
             public const string SendText = "sendText";
+            public const string MessageSubject = "messageSubject";
+            public const string SentMessage = "sentMessage";
+            public const string ErrorMessage = "errorMessage";
         }
 
         public static class PartnersGroup

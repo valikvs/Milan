@@ -43,4 +43,9 @@
     <p>
         <%=CurrentNode.Property(Fields.Contact.RequiredText)%>
     </p>
+    <asp:PlaceHolder runat="server" ID="plhResult" Visible="False">
+        <p class="result">
+            <%=Result%>
+        </p>
+    </asp:PlaceHolder>
 </div>
