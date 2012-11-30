@@ -10,7 +10,7 @@
         <%if (this.Projects.Count > 0){%>
         <ul class="previewAll clearfix">
             <%foreach (var project in this.Projects){%>
-            <li><a href="<%=project.Url%>"><img src="/pictures/_tmp2.jpg" width="188" height="141" alt="pic"></a></li>
+            <li><a href="<%=project.Url%>" title="<%=project.Property(Fields.Project.Title)%>"><img src="/pictures/_tmp2.jpg" width="188" height="141" alt="pic"></a></li>
             <%}%>
         </ul>
         <%}%>

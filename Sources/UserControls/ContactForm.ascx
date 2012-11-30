@@ -38,7 +38,7 @@
     <div class="row clearfix">
         <label>
         </label>
-        <asp:LinkButton runat="server" ID="btnSend" onclick="BtnSendClick" ValidationGroup="vgContactForm" CausesValidation="True" />
+        <asp:LinkButton runat="server" ID="btnSend" onclick="BtnSendClick" ValidationGroup="vgContactForm" CausesValidation="True" CssClass="btn" />
     </div>
     <p>
         <%=CurrentNode.Property(Fields.Contact.RequiredText)%>
