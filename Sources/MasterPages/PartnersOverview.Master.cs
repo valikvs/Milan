@@ -1,11 +1,7 @@
 ﻿namespace VSS.Milan.Web.MasterPages
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using umbraco.NodeFactory;
-    using VSS.Milan.Web.Core.Constants;
-    using VSS.Milan.Web.Core.Utils;
 
     public partial class PartnersOverview : System.Web.UI.MasterPage
     {

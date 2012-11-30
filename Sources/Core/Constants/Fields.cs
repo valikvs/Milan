@@ -63,6 +63,7 @@
 
         public static class ProjectsOverview
         {
+            public const string StartProject = "startProject";
             public const string ViewAllText = "viewAllText";
             public const string ViewNextProject = "viewNextProject";
             public const string ViewPreviousProject = "viewPreviousProject";
