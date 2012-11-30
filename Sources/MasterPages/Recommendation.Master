@@ -5,7 +5,7 @@
 <%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls" Assembly="umbraco" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="mainCol clearfix galleryRecom">
-        <%=HtmlHelper.Image(CurrentNode, Fields.Recommendation.Image)%>
+        <%=HtmlHelper.RecomendationImage(CurrentNode, Fields.Recommendation.Image)%>
     </div>
     <div class="sideCol">
         <umbraco:Macro ID="uRecommendationsNavigation" Alias="RecommendationsNavigation" runat="server" />

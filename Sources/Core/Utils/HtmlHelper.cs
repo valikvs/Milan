@@ -13,7 +13,7 @@
 
     public static class HtmlHelper
     {
-        public static string Image(Node node, string fieldName)
+        public static string RecomendationImage(Node node, string fieldName)
         {
             var mediaUrl = node.PropertyAsMediaUrl(fieldName);
             if (string.IsNullOrEmpty(mediaUrl))
@@ -21,7 +21,7 @@
                 return string.Empty;
             }
 
-            var image = new Image { ImageUrl = mediaUrl };
+            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "530"), AlternateText = "pic" };
 
             return RenderControl(image);
         }
