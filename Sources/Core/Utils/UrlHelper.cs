@@ -1,6 +1,9 @@
 ﻿namespace VSS.Milan.Web.Core.Utils
 {
+    using System;
     using System.Web;
+
+    using umbraco.BusinessLogic;
 
     public static class UrlHelper
     {
@@ -9,6 +12,21 @@
             url = "/ImageGen.ashx?Image=" + url;
 
             return AddQueryString(url, parameters);
+        }
+
+        public static string CleanUrl(string url)
+        {
+            try
+            {
+                var uri = new Uri(url);
+                url = uri.Host + uri.PathAndQuery;
+            }
+            catch (Exception ex)
+            {
+                Log.Add(LogTypes.Error, -1, string.Format("VSS.Milan.Web.Core.Utils.UrlHelper: Url formatting error. Exception: {0}", ex));
+            }
+
+            return url;
         }
 
         public static string AddQueryString(string url, params string[] parameters)

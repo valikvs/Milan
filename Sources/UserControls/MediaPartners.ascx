@@ -2,6 +2,7 @@
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 <%@ Import Namespace="umbraco.NodeFactory" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
 <div class="partners">
     <h2>
         <asp:Literal runat="server" ID="partnersTitle"></asp:Literal>
@@ -10,7 +11,7 @@
         <ItemTemplate>
             <p>
                 <%# ((Node)Container.DataItem).Property(Fields.MediaPartner.Title)%><br>
-                <a href="<%# ((Node)Container.DataItem).Property(Fields.MediaPartner.Url)%>" target="_blank"><%# ((Node)Container.DataItem).Property(Fields.MediaPartner.Url)%></a></p>
+                <a href="<%# ((Node)Container.DataItem).Property(Fields.MediaPartner.Url)%>" target="_blank"><%# UrlHelper.CleanUrl(((Node)Container.DataItem).Property(Fields.MediaPartner.Url))%></a></p>
         </ItemTemplate>
     </asp:Repeater>
 </div>
