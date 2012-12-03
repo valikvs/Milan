@@ -1,6 +1,7 @@
 ﻿namespace VSS.Milan.Web.Core.Utils
 {
     using System.IO;
+    using System.Linq;
     using System.Text;
     using System.Web.UI;
     using System.Web.UI.HtmlControls;
@@ -69,6 +70,27 @@
             item.Controls.Add(url);
 
             return RenderControl(item);
+        }
+
+        public static string ProjectOverviewImage(Node project)
+        {
+            var imageFolder = project.PropertyAsMediaFolder(Fields.Project.ImageFolder);
+            if (imageFolder != null)
+            {
+                var media = imageFolder.Children.FirstOrDefault();
+                if (media != null)
+                {
+                    var mediaUrl = media.AsMediaUrl();
+                    if (!string.IsNullOrEmpty(mediaUrl))
+                    {
+                        var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "188", "Height", "141"), AlternateText = "pic" };
+
+                        return RenderControl(image);
+                    }
+                }
+            }
+
+            return string.Empty;
         }
 
         public static string StudioImage(Media media)

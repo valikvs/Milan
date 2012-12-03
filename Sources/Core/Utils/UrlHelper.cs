@@ -14,16 +14,16 @@
             return AddQueryString(url, parameters);
         }
 
-        public static string CleanUrl(string url)
+        public static string UrlHost(this string url)
         {
             try
             {
                 var uri = new Uri(url);
-                url = uri.Host + uri.PathAndQuery;
+                url = uri.Host;
             }
             catch (Exception ex)
             {
-                Log.Add(LogTypes.Error, -1, string.Format("VSS.Milan.Web.Core.Utils.UrlHelper: Url formatting error. Exception: {0}", ex));
+                Log.Add(LogTypes.Error, -1, string.Format("VSS.Milan.Web.Core.Utils.UrlHelper: UrlHost. Exception: {0}", ex));
             }
 
             return url;

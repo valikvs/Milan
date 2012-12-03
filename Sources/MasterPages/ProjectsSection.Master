@@ -2,6 +2,7 @@
     Inherits="VSS.Milan.Web.MasterPages.ProjectsSection" MasterPageFile="~/masterpages/MainContent.master" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
 <%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
     Assembly="umbraco" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
@@ -10,7 +11,7 @@
         <%if (this.Projects.Count > 0){%>
         <ul class="previewAll clearfix">
             <%foreach (var project in this.Projects){%>
-            <li><a href="<%=project.Url%>" title="<%=project.Property(Fields.Project.Title)%>"><img src="/pictures/_tmp2.jpg" width="188" height="141" alt="pic"></a></li>
+            <li><a href="<%=project.Url%>" title="<%=project.Property(Fields.Project.Title)%>"><%=HtmlHelper.ProjectOverviewImage(project)%></a></li>
             <%}%>
         </ul>
         <%}%>

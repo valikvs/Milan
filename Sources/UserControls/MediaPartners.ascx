@@ -11,7 +11,7 @@
         <ItemTemplate>
             <p>
                 <%# ((Node)Container.DataItem).Property(Fields.MediaPartner.Title)%><br>
-                <a href="<%# ((Node)Container.DataItem).Property(Fields.MediaPartner.Url)%>" target="_blank"><%# UrlHelper.CleanUrl(((Node)Container.DataItem).Property(Fields.MediaPartner.Url))%></a></p>
+                <a href="<%# ((Node)Container.DataItem).Property(Fields.MediaPartner.Url)%>" target="_blank"><%# ((Node)Container.DataItem).Property(Fields.MediaPartner.Url).UrlHost()%></a></p>
         </ItemTemplate>
     </asp:Repeater>
 </div>
