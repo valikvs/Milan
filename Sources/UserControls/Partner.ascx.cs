@@ -1,6 +1,7 @@
 ﻿namespace VSS.Milan.Web.UserControls
 {
     using System.Web.UI;
+    using VSS.Milan.Web.Core.Utils;
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
@@ -15,7 +16,7 @@
 
         protected string Phone { get; set; }
 
-        private string Url { get; set; }
+        protected string Url { get; set; }
 
         protected override void Render(HtmlTextWriter writer)
         {
@@ -29,8 +30,6 @@
             plhPhone.Visible = !string.IsNullOrEmpty(this.Phone);
 
             this.Url = this.PartnerNode.Property(Fields.Partner.Url);
-            hlUrl.NavigateUrl = this.Url;
-            hlUrl.Text = this.Url;
             plhUrl.Visible = !string.IsNullOrEmpty(this.Url);
 
             base.Render(writer);

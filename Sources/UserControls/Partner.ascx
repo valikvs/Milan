@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Partner.ascx.cs" Inherits="VSS.Milan.Web.UserControls.Partner" %>
-
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
 <p>
     <asp:PlaceHolder runat="server" ID="plhTitle">
     <%=Title%><br />
@@ -11,6 +11,6 @@
     <%=Phone%><br />
     </asp:PlaceHolder>
     <asp:PlaceHolder runat="server" ID="plhUrl">
-    <asp:HyperLink runat="server" ID="hlUrl"></asp:HyperLink>
+    <a href="<%=Url%>" target="_blank"><%=Url.UrlHost()%></a>
     </asp:PlaceHolder>
 </p>
