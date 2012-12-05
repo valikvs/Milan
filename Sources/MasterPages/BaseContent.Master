@@ -18,9 +18,10 @@
     <script type="text/javaScript" src="/scripts/jquery.jcarousel.min.js"></script>
     <script type="text/javaScript" src="/scripts/snow.js"></script>
     <script type="text/javaScript" src="/scripts/actions.js"></script>
+    <asp:PlaceHolder runat="server" ID="plhGoogleAnalytics" Visible="False">
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+        _gaq.push(['_setAccount', '<%=GoogleAnalyticsId%>']);
         _gaq.push(['_trackPageview']);
 
         (function () {
@@ -29,6 +30,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
+    </asp:PlaceHolder>
     <asp:PlaceHolder runat="server" ID="plhSnowEffect" Visible="False">
         <script type="text/javascript">
             $(function () {

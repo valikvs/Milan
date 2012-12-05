@@ -40,6 +40,15 @@ namespace VSS.Milan.Web.MasterPages {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mKeywords;
         
         /// <summary>
+        /// plhGoogleAnalytics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plhGoogleAnalytics;
+        
+        /// <summary>
         /// plhSnowEffect control.
         /// </summary>
         /// <remarks>

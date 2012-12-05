@@ -8,6 +8,8 @@
 
     public partial class BaseContent : System.Web.UI.MasterPage
     {
+        protected string GoogleAnalyticsId { get; set; }
+
         private static Node CurrentNode
         {
             get
@@ -43,6 +45,12 @@
             var homeNode = NodeHelper.HomeNode;
             if (homeNode != null)
             {
+                this.GoogleAnalyticsId = homeNode.Property(Fields.Home.GoogleAnalyticsId);
+                if (!string.IsNullOrEmpty(this.GoogleAnalyticsId))
+                {
+                    plhGoogleAnalytics.Visible = true;
+                }
+
                 var effect = homeNode.Property(Fields.Home.Effects).ToLower();
                 switch (effect)
                 {

@@ -16,6 +16,7 @@
             public const string EnglishNode = "englishNode";
             public const string FooterTopText = "footerTopText";
             public const string FooterBottomText = "footerBottomText";
+            public const string GoogleAnalyticsId = "googleAnalyticsId";
             public const string Effects = "effects";
             public const string Email = "email";
         }
