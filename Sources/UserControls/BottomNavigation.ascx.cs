@@ -7,21 +7,7 @@ namespace VSS.Milan.Web.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.Page.IsPostBack)
-            {
-                return;
-            }
-
-            var menuNodes = NodeHelper.BottomMenuNodes;
-            if (menuNodes != null && menuNodes.Count > 0)
-            {
-                rptNavigation.DataSource = menuNodes;
-                rptNavigation.DataBind();
-            }
-            else
-            {
-                rptNavigation.Visible = false;
-            }
+            navBottom.NavigationNodes = NodeHelper.BottomMenuNodes;
         }
     }
 }

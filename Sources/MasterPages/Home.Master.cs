@@ -26,10 +26,10 @@
                 var effect = Helper.SiteEffect;
                 switch (effect)
                 {
-                    case Effects.Snow:
+                    case Effect.Snow:
                         bodyCss += " snowMode";
                         break;
-                    case Effects.Flowers:
+                    case Effect.Flowers:
                         bodyCss += " flowersMode";
                         break;
                 }

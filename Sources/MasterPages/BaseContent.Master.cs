@@ -56,10 +56,10 @@
             var effect = Helper.SiteEffect;
             switch (effect)
             {
-                case Effects.Snow:
+                case Effect.Snow:
                     plhSnowEffect.Visible = true;
                     break;
-                case Effects.Flowers:
+                case Effect.Flowers:
                     plhFlowersEffect.Visible = true;
                     break;
             }

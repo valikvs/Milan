@@ -10,15 +10,15 @@
 namespace VSS.Milan.Web.UserControls {
     
     
-    public partial class TopNavigation {
+    public partial class Navigation {
         
         /// <summary>
-        /// navTop control.
+        /// rptNavigation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::VSS.Milan.Web.UserControls.Navigation navTop;
+        protected global::System.Web.UI.WebControls.Repeater rptNavigation;
     }
 }

@@ -1,5 +1,4 @@
-﻿# robots.txt for Umbraco
-User-agent: *
+﻿User-agent: *
 Disallow: /aspnet_client/
 Disallow: /bin/
 Disallow: /config/

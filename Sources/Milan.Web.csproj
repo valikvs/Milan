@@ -71,10 +71,9 @@
     <Compile Include="Core\Constants\Fields.cs" />
     <Compile Include="Core\Constants\Parameters.cs" />
     <Compile Include="Core\Data\Month.cs" />
-    <Compile Include="Core\Enums\Effects.cs" />
+    <Compile Include="Core\Enums\Effect.cs" />
     <Compile Include="Core\Extentions\NodeExtentions.cs" />
     <Compile Include="Core\Extentions\StringExtentions.cs" />
-    <Compile Include="Core\Umbraco\Custom404.cs" />
     <Compile Include="Core\Utils\FormsHelper.cs" />
     <Compile Include="Core\Utils\HtmlHelper.cs" />
     <Compile Include="Core\Utils\Helper.cs" />
@@ -200,6 +199,13 @@
     </Compile>
     <Compile Include="UserControls\BottomNavigation.ascx.designer.cs">
       <DependentUpon>BottomNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Navigation.ascx.cs">
+      <DependentUpon>Navigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Navigation.ascx.designer.cs">
+      <DependentUpon>Navigation.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\GoogleMap.ascx.cs">
       <DependentUpon>GoogleMap.ascx</DependentUpon>
@@ -356,6 +362,7 @@
     <Content Include="UmbracoUpdates\robots.txt" />
     <Content Include="UserControls\ContactForm.ascx" />
     <Content Include="UserControls\BottomNavigation.ascx" />
+    <Content Include="UserControls\Navigation.ascx" />
     <Content Include="UserControls\GoogleMap.ascx" />
     <Content Include="UserControls\Partner.ascx" />
     <Content Include="UserControls\ProjectsNavigation.ascx" />

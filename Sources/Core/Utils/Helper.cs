@@ -4,8 +4,8 @@
     using System.Globalization;
     using umbraco;
     using umbraco.NodeFactory;
-    using VSS.Milan.Web.Core.Enums;
     using VSS.Milan.Web.Core.Constants;
+    using VSS.Milan.Web.Core.Enums;
     using VSS.Milan.Web.Core.Extentions;
 
     public static class Helper
@@ -18,7 +18,7 @@
             }
         }
 
-        public static Effects SiteEffect
+        public static Effect SiteEffect
         {
             get
             {
@@ -26,12 +26,12 @@
                 switch (effect)
                 {
                     case Parameters.Home.Snow:
-                        return Effects.Snow;
+                        return Effect.Snow;
                     case Parameters.Home.Flowers:
-                        return Effects.Flowers;
+                        return Effect.Flowers;
                 }
 
-                return Effects.None;
+                return Effect.None;
             }
         }
 
