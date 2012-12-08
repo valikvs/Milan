@@ -4,16 +4,16 @@
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 <%=HtmlHelper.LeftNavigationItem(NodeHelper.ProjectsOverviewNode)%>
 <% if (this.Sections.Count > 0) { %>
-<ul class="menu">
     <% foreach (var section in this.Sections) { %>
-    <li class="hasSubMenu<%if (NodeHelper.IsCurrentPath(section)) {%> expanded<% } %>"><a href="#"><%=section.Property(Fields.BaseContent.NavigationTitle)%></a>
-    <ul>
-        <% foreach (var year in NodeHelper.GetSectionYears(section))
-           { %>
-        <%= HtmlHelper.ProjectsYear(this, year)%>
-        <% } %>    </ul>
-    </li>
-    <li<%if (NodeHelper.IsCurrentNode(section)) {%> class="cur"<% } %>><a href="<%=section.Url%>"><%=ViewAllText%></a></li>
+    <ul class="menu">
+        <li class="hasSubMenu<%if (NodeHelper.IsCurrentPath(section)) {%> expanded<% } %>"><a href="#"><%=section.Property(Fields.BaseContent.NavigationTitle)%></a>
+        <ul>
+            <% foreach (var year in NodeHelper.GetSectionYears(section))
+               { %>
+            <%= HtmlHelper.ProjectsYear(this, year)%>
+            <% } %>        </ul>
+        </li>
+        <li<%if (NodeHelper.IsCurrentNode(section)) {%> class="cur"<% } %>><a href="<%=section.Url%>"><%=ViewAllText%></a></li>
+    </ul>
     <% } %>
-</ul>
 <% } %>

@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
