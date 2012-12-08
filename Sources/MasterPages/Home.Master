@@ -1,21 +1,24 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.Master.cs" Inherits="VSS.Milan.Web.MasterPages.Home"
     MasterPageFile="~/masterpages/BaseContent.master" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
-    <body class="splash">
+    <body class="<%=BodyClass%>">
         <div class="wrapper">
             <div class="splashContainer clearfix">
-                <asp:HyperLink runat="server" ID="russianNodeUrl" CssClass="rus"></asp:HyperLink>
-                <asp:HyperLink runat="server" ID="englishNodeUrl" CssClass="eng"></asp:HyperLink>
+                <a href="<%=RussianUrl%>" class="rus"></a><a href="<%=EnglishUrl%>" class="eng"></a><span class="visuals sn1">
+                </span><span class="visuals sn2"></span><span class="visuals sn3"></span><span class="visuals sn4">
+                </span><span class="visuals sn5"></span><span class="visuals sn6"></span><span class="visuals sn7">
+                </span><span class="visuals sn8"></span><span class="visuals sn9"></span><span class="visuals sn10">
+                </span><span class="visuals sn11"></span>
             </div>
             <div class="clear he">
                 <!---->
             </div>
         </div>
         <div class="mainFooter">
-            <h2>
-                <asp:Literal runat="server" ID="footerTopText"></asp:Literal></h2>
-            <p>
-                <asp:Literal runat="server" ID="footerBottomText"></asp:Literal></p>
+            <span class="visuals sn1"></span><span class="visuals sn2"></span><span class="visuals sn3">
+            </span><span class="visuals sn4"></span>
+            <h2><%=FooterTopText%></h2>
+            <p><%=FooterBottomText%></p>
         </div>
     </body>
 </asp:Content>

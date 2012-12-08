@@ -34,14 +34,22 @@
     <asp:PlaceHolder runat="server" ID="plhSnowEffect" Visible="False">
         <script type="text/javascript">
             $(function () {
-                $(document).snow({ SnowImage: "/images/icons/snow.png" });
+                container = $("body");
+                snow_intensive = 900;
+                snow_speed = 20000;
+                snow_src = new Array('/images/snows/sn1.png', '/images/snows/sn2.png', '/images/snows/snow.png', '/images/snows/sn8.png', '/images/snows/sn9.png');
+                snow_start();
             });
         </script>
     </asp:PlaceHolder>
     <asp:PlaceHolder runat="server" ID="plhFlowersEffect" Visible="False">
         <script type="text/javascript">
             $(function () {
-                $(document).snow({ SnowImage: "/images/icons/flower.png" });
+                container = $("body");
+                snow_intensive = 900;
+                snow_speed = 20000;
+                snow_src = new Array('/images/flowers/flower.png', '/images/flowers/fl5.png', '/images/flowers/fl6.png', '/images/flowers/fl7.png', '/images/flowers/fl8.png');
+                snow_start();
             });
         </script>
     </asp:PlaceHolder>

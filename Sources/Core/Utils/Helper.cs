@@ -4,6 +4,9 @@
     using System.Globalization;
     using umbraco;
     using umbraco.NodeFactory;
+    using VSS.Milan.Web.Core.Enums;
+    using VSS.Milan.Web.Core.Constants;
+    using VSS.Milan.Web.Core.Extentions;
 
     public static class Helper
     {
@@ -12,6 +15,23 @@
             get
             {
                 return GetNodeFromXpath("$currentPage/ancestor-or-self::*[@level=1]");
+            }
+        }
+
+        public static Effects SiteEffect
+        {
+            get
+            {
+                var effect = HomeNode.Property(Fields.Home.Effects).ToLower();
+                switch (effect)
+                {
+                    case Parameters.Home.Snow:
+                        return Effects.Snow;
+                    case Parameters.Home.Flowers:
+                        return Effects.Flowers;
+                }
+
+                return Effects.None;
             }
         }
 

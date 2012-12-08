@@ -3,6 +3,7 @@
     using System;
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
+    using VSS.Milan.Web.Core.Enums;
     using VSS.Milan.Web.Core.Extentions;
     using VSS.Milan.Web.Core.Utils;
 
@@ -50,17 +51,17 @@
                 {
                     plhGoogleAnalytics.Visible = true;
                 }
+            }
 
-                var effect = homeNode.Property(Fields.Home.Effects).ToLower();
-                switch (effect)
-                {
-                    case Parameters.Home.Snow:
-                        plhSnowEffect.Visible = true;
-                        break;
-                    case Parameters.Home.Flowers:
-                        plhFlowersEffect.Visible = true;
-                        break;
-                }
+            var effect = Helper.SiteEffect;
+            switch (effect)
+            {
+                case Effects.Snow:
+                    plhSnowEffect.Visible = true;
+                    break;
+                case Effects.Flowers:
+                    plhFlowersEffect.Visible = true;
+                    break;
             }
         }
     }

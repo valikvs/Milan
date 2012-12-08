@@ -1,108 +1,22 @@
-/**
- * jQuery snow effects.
- *
- * This is a heavily modified, jQuery-adapted, browser-agnostic version of 
- * "Snow Effect Script" by Altan d.o.o. (http://www.altan.hr/snow/index.html).
- *
- * Dustin Oprea (2011)
- */
+var container,
+	snow_intensive,
+	snow_speed,
+	snow_src; 
 
-function __ShowSnow(settings)
-{
-
-    var snowsrc = settings.SnowImage;
-    var no = settings.Quantity;
-
-    var dx, xp, yp;    // coordinate and position variables
-    var am, stx, sty;  // amplitude and step variables
-    var i; 
-
-    var doc_width = $(window).width() - 10;
-    var doc_height = $(window).height();
-
-    dx = [];
-    xp = [];
-    yp = [];
-    am = [];
-    stx = [];
-    sty = [];
-    flakes = [];
-    for (i = 0; i < no; ++i) 
-    {
-        dx[i] = 0;                        // set coordinate variables
-        xp[i] = Math.random()*(doc_width-50);  // set position variables
-        yp[i] = Math.random()*doc_height;
-        am[i] = Math.random()*20;         // set amplitude variables
-        stx[i] = 0.02 + Math.random()/10; // set step variables
-        sty[i] = 0.7 + Math.random();     // set step variables
-
-        var flake = $("<div />");
-
-        var id = ("dot" + i);
-        flake.attr("id", id);
-        flake.css({
-                    position: "absolute",
-                    zIndex: i,
-                    top: "15px",
-                    left: "15px"
-                });
-
-        flake.append("<img src='" + snowsrc + "'>");
-        flake.appendTo("body");
-
-        flakes[i] = $("#" + id);
-    }
-
-    var animateSnow;
-    animateSnow = function() 
-    {  
-        for (i = 0; i < no; ++ i) 
-        {
-            // iterate for every dot
-            yp[i] += sty[i];
-            if (yp[i] > doc_height - 50) 
-            {
-                xp[i] = Math.random() * (doc_width - am[i] - 30);
-                yp[i] = 0;
-                stx[i] = 0.02 + Math.random() / 10;
-                sty[i] = 0.7 + Math.random();
-            }
-      
-            dx[i] += stx[i];
-            flakes[i].css("top", yp[i] + "px");
-            flakes[i].css("left", (xp[i] + am[i] * Math.sin(dx[i])) + "px");
-        }
-
-        snowtimer = setTimeout(animateSnow, 10);
-    };
-
-	function hidesnow()
-    {
-		if(window.snowtimer)
-            clearTimeout(snowtimer)
-
-        for (i = 0; i < no; i++)
-            flakes[i].hide();
-	}
+function snow_start() { 
+	snow_id=1; 
+	snow_y=container.height()-30; 
+	setInterval(function() { 
+		snow_x=Math.random()*document.body.offsetWidth-100; 
+		snow_img=(snow_src instanceof Array ? snow_src[Math.floor(Math.random()*snow_src.length)] : snow_src); 
+		snow_elem='<img class="png" id="snow'+snow_id+'" style="position:absolute; left:'+snow_x+'px; top:0;z-index:10000" src="'+snow_img+'">'; 
+		container.append(snow_elem); 
+		snow_move(snow_id); 
+		snow_id++; 
+	},snow_intensive);
+} 
 		
-    animateSnow();
-	if (settings.HideSnowTime > 0)
-    	setTimeout(hidesnow, settings.HideSnowTime * 1000)
-}
-
-(function($) {
-    $.fn.snow = function(options) {
-  
-    var settings = $.extend({
-            SnowImage:      undefined,
-            Quantity:       7,
-            HideSnowTime:   0
-        }, options);
-
-    __ShowSnow(settings);
-
-    return this;
-  }
-
-})(jQuery);
-
+function snow_move(id) { 
+	$('#snow'+id).animate({top:snow_y,left:"+="+Math.random()*100},snow_speed,function() { 
+	$(this).empty().remove(); 
+});} 

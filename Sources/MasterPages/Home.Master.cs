@@ -4,6 +4,8 @@
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
+    using VSS.Milan.Web.Core.Enums;
+    using VSS.Milan.Web.Core.Utils;
 
     public partial class Home : System.Web.UI.MasterPage
     {
@@ -15,32 +17,69 @@
             }
         }
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected string BodyClass
         {
-            if (this.Page.IsPostBack)
+            get
             {
-                return;
-            }
+                var bodyCss = "splash";
 
-            if (CurrentNode == null)
+                var effect = Helper.SiteEffect;
+                switch (effect)
+                {
+                    case Effects.Snow:
+                        bodyCss += " snowMode";
+                        break;
+                    case Effects.Flowers:
+                        bodyCss += " flowersMode";
+                        break;
+                }
+
+                return bodyCss;
+            }
+        }
+
+        protected string RussianUrl
+        {
+            get
             {
-                return;
-            }
+                var russianNode = CurrentNode.PropertyAsNode(Fields.Home.RussianNode);
+                if (russianNode != null)
+                {
+                    return russianNode.Url;
+                }
 
-            var russianNode = CurrentNode.PropertyAsNode(Fields.Home.RussianNode);
-            if (russianNode != null)
+                return string.Empty;
+            }
+        }
+
+        protected string EnglishUrl
+        {
+            get
             {
-                this.russianNodeUrl.NavigateUrl = russianNode.Url;
-            }
+                var englishNode = CurrentNode.PropertyAsNode(Fields.Home.EnglishNode);
+                if (englishNode != null)
+                {
+                    return englishNode.Url;
+                }
 
-            var englishNode = CurrentNode.PropertyAsNode(Fields.Home.EnglishNode);
-            if (englishNode != null)
+                return string.Empty;
+            }
+        }
+
+        protected string FooterTopText
+        {
+            get
             {
-                this.englishNodeUrl.NavigateUrl = englishNode.Url;
+                return CurrentNode.Property(Fields.Home.FooterTopText);
             }
+        }
 
-            this.footerTopText.Text = CurrentNode.Property(Fields.Home.FooterTopText);
-            this.footerBottomText.Text = CurrentNode.Property(Fields.Home.FooterBottomText);
+        protected string FooterBottomText
+        {
+            get
+            {
+                return CurrentNode.Property(Fields.Home.FooterBottomText);
+            }
         }
     }
 }
