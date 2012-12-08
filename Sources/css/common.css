@@ -59,11 +59,11 @@ h6 {font-size:12px; font-family: 'CenturyGothic';}
 .sideCol a:hover { color:#5F6262;}
 .sideCol .menu { padding:9px 0 12px 0;}
 .sideCol .menu > li { padding-bottom:4px;}
-.sideCol .menu > li a { display:inline-block; padding-right:9px; text-decoration:none;}
+.sideCol .menu > li a { display:inline-block; padding-right:9px; padding-bottom:1px; text-decoration:none;}
 .sideCol .menu .hasSubMenu > a { background:url(../images/arrows/arrow_left-menu.png) right 5px no-repeat;}
 .sideCol .menu .expanded > a {background-position:right -20px;}
 .sideCol .menu li > ul { display:none; font-size:11px; padding:1px 0 6px 5px;}
-.sideCol .menu li > ul ul {padding-bottom:0;}
+.sideCol .menu li > ul ul {padding:4px 0 6px 5px;}
 .sideCol .menu .expanded > ul {display:block;}
 .sideCol .menu .cur > a {color:#5F6262;}
 .sideCol .partners { padding-top:88px;}
