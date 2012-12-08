@@ -30,11 +30,19 @@
             }
         }
 
-        public static List<INode> MainMenuNodes
+        public static List<INode> TopMenuNodes
         {
             get
             {
-                return LanguageNode.ChildrenAsList.Where(c => c.PropertyAsBool(Fields.MainContent.ShowInNavigation)).ToList();
+                return LanguageNode.ChildrenAsList.Where(c => c.PropertyAsBool(Fields.MainContent.ShowInTopNavigation)).ToList();
+            }
+        }
+
+        public static List<INode> BottomMenuNodes
+        {
+            get
+            {
+                return LanguageNode.ChildrenAsList.Where(c => c.PropertyAsBool(Fields.MainContent.ShowInBottomNavigation)).ToList();
             }
         }
 

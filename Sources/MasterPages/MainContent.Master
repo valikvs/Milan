@@ -7,7 +7,7 @@
             <div class="mainTop clearfix">
                 <umbraco:Macro ID="uHeaderButtons" Alias="HeaderButtons" runat="server" />
                 <a href="#" class="logo" runat="server" id="logoUrl" clientidmode="Static"></a>
-                <umbraco:Macro ID="uTopNav" Alias="MainNavigation" runat="server" />
+                <umbraco:Macro ID="uTopNav" Alias="TopNavigation" runat="server" />
             </div>
             <form runat="server">
             <asp:contentplaceholder id="ContentPlaceHolderMain" runat="server"></asp:contentplaceholder>
@@ -23,7 +23,7 @@
             <p>
                 <asp:literal runat="server" id="footerLeftText"></asp:literal>
             </p>
-            <umbraco:Macro ID="uBottomNav" Alias="MainNavigation" runat="server" />
+            <umbraco:Macro ID="uBottomNav" Alias="BottomNavigation" runat="server" />
         </div>
     </body>
 </asp:Content>

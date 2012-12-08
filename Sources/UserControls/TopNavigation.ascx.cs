@@ -3,7 +3,7 @@ namespace VSS.Milan.Web.UserControls
     using System;
     using VSS.Milan.Web.Core.Utils;
 
-    public partial class MainNavigation : System.Web.UI.UserControl
+    public partial class TopNavigation : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -12,7 +12,7 @@ namespace VSS.Milan.Web.UserControls
                 return;
             }
 
-            var menuNodes = NodeHelper.MainMenuNodes;
+            var menuNodes = NodeHelper.TopMenuNodes;
             if (menuNodes != null && menuNodes.Count > 0)
             {
                 rptNavigation.DataSource = menuNodes;

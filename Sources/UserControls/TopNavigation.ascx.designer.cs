@@ -10,7 +10,7 @@
 namespace VSS.Milan.Web.UserControls {
     
     
-    public partial class MainNavigation {
+    public partial class TopNavigation {
         
         /// <summary>
         /// rptNavigation control.

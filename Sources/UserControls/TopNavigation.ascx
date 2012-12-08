@@ -1,5 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MainNavigation.ascx.cs"
-    Inherits="VSS.Milan.Web.UserControls.MainNavigation" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TopNavigation.ascx.cs"
+    Inherits="VSS.Milan.Web.UserControls.TopNavigation" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 <%@ Import Namespace="umbraco.NodeFactory" %>

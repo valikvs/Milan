@@ -194,6 +194,13 @@
     <Compile Include="UserControls\ContactForm.ascx.designer.cs">
       <DependentUpon>ContactForm.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\BottomNavigation.ascx.cs">
+      <DependentUpon>BottomNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\BottomNavigation.ascx.designer.cs">
+      <DependentUpon>BottomNavigation.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\GoogleMap.ascx.cs">
       <DependentUpon>GoogleMap.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,12 +250,12 @@
     <Compile Include="UserControls\HeaderButtons.ascx.designer.cs">
       <DependentUpon>HeaderButtons.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MainNavigation.ascx.cs">
-      <DependentUpon>MainNavigation.ascx</DependentUpon>
+    <Compile Include="UserControls\TopNavigation.ascx.cs">
+      <DependentUpon>TopNavigation.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControls\MainNavigation.ascx.designer.cs">
-      <DependentUpon>MainNavigation.ascx</DependentUpon>
+    <Compile Include="UserControls\TopNavigation.ascx.designer.cs">
+      <DependentUpon>TopNavigation.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MediaPartners.ascx.cs">
       <DependentUpon>MediaPartners.ascx</DependentUpon>
@@ -348,6 +355,7 @@
     <Content Include="scripts\snow.js" />
     <Content Include="UmbracoUpdates\robots.txt" />
     <Content Include="UserControls\ContactForm.ascx" />
+    <Content Include="UserControls\BottomNavigation.ascx" />
     <Content Include="UserControls\GoogleMap.ascx" />
     <Content Include="UserControls\Partner.ascx" />
     <Content Include="UserControls\ProjectsNavigation.ascx" />
@@ -355,7 +363,7 @@
     <Content Include="UserControls\RecommendationsNavigation.ascx" />
     <Content Include="UserControls\Sharing.ascx" />
     <Content Include="UserControls\HeaderButtons.ascx" />
-    <Content Include="UserControls\MainNavigation.ascx" />
+    <Content Include="UserControls\TopNavigation.ascx" />
     <Content Include="UserControls\MediaPartners.ascx" />
     <Content Include="UserControls\NewsArchive.ascx" />
     <Content Include="UserControls\NewsNavigation.ascx" />

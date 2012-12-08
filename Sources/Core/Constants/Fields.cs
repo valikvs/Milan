@@ -32,7 +32,8 @@
 
         public static class MainContent
         {
-            public const string ShowInNavigation = "showInNavigation";
+            public const string ShowInTopNavigation = "showInTopNavigation";
+            public const string ShowInBottomNavigation = "showInBottomNavigation";
         }
 
         public static class ContentPage
