@@ -1,0 +1,11 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Gallery.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.Gallery" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Register TagPrefix="uc" Src="~/UserControls/GalleryNavigation.ascx" TagName="GalleryNavigation" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <div class="mainCol clearfix newsCol">
+
+    </div>
+    <div class="sideCol">
+        <uc:GalleryNavigation ID="galNav" runat="server" />
+    </div>
+</asp:Content>

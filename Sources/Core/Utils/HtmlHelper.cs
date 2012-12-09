@@ -169,6 +169,52 @@
             return RenderControl(control);
         }
 
+        public static string GalleryYear(Control self, Node year)
+        {
+            var control = (GalleryYear)LoadControl("~/UserControls/GalleryYear.ascx", self);
+            control.YearNode = year;
+
+            return RenderControl(control);
+        }
+
+        public static string GalleryImage(Media media)
+        {
+            var mediaUrl = media.AsMediaUrl();
+            if (string.IsNullOrEmpty(mediaUrl))
+            {
+                return string.Empty;
+            }
+
+            var item = new HtmlGenericControl("li");
+            var url = new HyperLink { NavigateUrl = mediaUrl };
+            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "113", "Height", "85") };
+            url.Controls.Add(image);
+            item.Controls.Add(url);
+
+            return RenderControl(item);
+        }
+
+        public static string GalleryItemOverviewImage(Node item)
+        {
+            var imageFolder = item.PropertyAsMediaFolder(Fields.GalleryItem.ImageFolder);
+            if (imageFolder != null)
+            {
+                var media = imageFolder.Children.FirstOrDefault();
+                if (media != null)
+                {
+                    var mediaUrl = media.AsMediaUrl();
+                    if (!string.IsNullOrEmpty(mediaUrl))
+                    {
+                        var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "188", "Height", "141") };
+
+                        return RenderControl(image);
+                    }
+                }
+            }
+
+            return string.Empty;
+        }
+
         private static object LoadControl(string path, Control self)
         {
             Page page;

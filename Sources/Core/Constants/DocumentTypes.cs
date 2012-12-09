@@ -19,5 +19,9 @@
         public const string PartnersGroup = "PartnersGroup";
         public const string Partner = "Partner";
         public const string MediaPartner = "MediaPartner";
+        public const string Gallery = "Gallery";
+        public const string GallerySection = "GallerySection";
+        public const string GalleryYear = "GalleryYear";
+        public const string GalleryItem = "GalleryItem";
     }
 }

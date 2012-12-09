@@ -12,7 +12,7 @@
     <% } else { %>
     <li>
     <% } %>
-        <a href="<%=recommendation.Url%>"><%=recommendation.Property(Fields.Recommendation.Title)%></a>
+        <a href="<%=recommendation.Url%>"><%=recommendation.Property(Fields.BaseContent.NavigationTitle)%></a>
     </li>
     <% } %>
     <% if (NodeHelper.IsCurrentNode(this.RecommendationsNode)) { %>

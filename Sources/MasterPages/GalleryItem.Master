@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GalleryItem.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.GalleryItem" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
+<%@ Register TagPrefix="uc" Src="~/UserControls/GalleryNavigation.ascx" TagName="GalleryNavigation" %>
+<%@ Register TagPrefix="uc" TagName="Sharing" Src="~/UserControls/Sharing.ascx" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+  <div class="mainCol clearfix galleryCol">
+    <h3><%=CurrentNode.Property(Fields.GalleryItem.Title)%></h3>
+    <%if (this.NextItem != null){%>
+    <a href="<%=this.NextItem.Url%>" class="nextProject" title="<%=Gallery.Property(Fields.Gallery.ViewNextItemText)%>"></a>
+    <%}%>
+    <%if (this.PreviousItem != null){%>
+    <a href="<%=this.PreviousItem.Url%>" class="prevProject" title="<%=Gallery.Property(Fields.Gallery.ViewPreviousItemText)%>"></a>
+    <%}%>
+    <%if (this.Images.Count > 0){%>
+    <div id="gallery" class="ad-gallery">
+      <div class="ad-image-wrapper"> </div>
+      <div class="ad-nav">
+        <div class="ad-thumbs">
+          <ul class="ad-thumb-list">
+            <%foreach (var image in this.Images) {%>
+            <%=HtmlHelper.GalleryImage(image)%>
+            <%}%>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <%}%>
+    <uc:Sharing runat="server"/>
+  </div>
+    <div class="sideCol">
+        <uc:GalleryNavigation ID="galNav" runat="server" />
+    </div>
+</asp:Content>

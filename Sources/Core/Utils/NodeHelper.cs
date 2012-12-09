@@ -265,6 +265,80 @@
                     : null;
         }
 
+        public static List<Node> GetGallerySections(Node gallery)
+        {
+            return gallery != null ?
+                gallery.GetChildNodesByType(DocumentTypes.GallerySection).Where(y => y.Children.Count > 0).ToList() :
+                new List<Node>();
+        }
+
+        public static List<Node> GetGalleryYears(Node section)
+        {
+            return section != null ?
+                section.GetChildNodesByType(DocumentTypes.GalleryYear).Where(y => y.Children.Count > 0).ToList() :
+                new List<Node>();
+        }
+
+        public static List<Node> GetGalleryItems(Node year)
+        {
+            return year != null ?
+                year.GetChildNodesByType(DocumentTypes.GalleryItem).ToList() :
+                new List<Node>();
+        }
+
+        public static List<Node> GetGallerySectionItems(Node section)
+        {
+            return section != null ?
+                section.GetDescendantNodesByType(DocumentTypes.GalleryItem).ToList() :
+                new List<Node>();
+        }
+
+        public static Node GetGalleryItemNext(Node item)
+        {
+            var section = item.Parent.Parent as Node;
+            if (section == null)
+            {
+                return null;
+            }
+
+            var items = GetGallerySectionItems(section);
+            if (items.Count < 2)
+            {
+                return null;
+            }
+
+            var index = items.FindIndex(p => p.Id == item.Id);
+            if (index >= 0 && items.Count - 1 > index)
+            {
+                return items[++index];
+            }
+
+            return null;
+        }
+
+        public static Node GetGalleryItemPrevious(Node item)
+        {
+            var section = item.Parent.Parent as Node;
+            if (section == null)
+            {
+                return null;
+            }
+
+            var items = GetGallerySectionItems(section);
+            if (items.Count < 2)
+            {
+                return null;
+            }
+
+            var index = items.FindIndex(p => p.Id == item.Id);
+            if (index > 0)
+            {
+                return items[--index];
+            }
+
+            return null;
+        }
+
         public static bool IsCurrentNode(Node node)
         {
             var currentNode = Node.GetCurrent();

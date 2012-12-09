@@ -63,6 +63,25 @@
             public const string Text = "text";
         }
 
+        public static class Gallery
+        {
+            public const string StartItem = "startItem";
+            public const string ViewAllText = "viewAllText";
+            public const string ViewNextItemText = "viewNextItemText";
+            public const string ViewPreviousItemText = "viewPreviousItemText";
+        }
+
+        public static class GallerySection
+        {
+            public const string Title = "title";
+        }
+
+        public static class GalleryItem
+        {
+            public const string Title = "title";
+            public const string ImageFolder = "imageFolder";
+        }
+
         public static class ProjectsOverview
         {
             public const string StartProject = "startProject";

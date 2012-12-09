@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GallerySection.Master.cs"
+    Inherits="VSS.Milan.Web.MasterPages.GallerySection" MasterPageFile="~/masterpages/MainContent.master" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
+<%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
+<%@ Register TagPrefix="uc" Src="~/UserControls/GalleryNavigation.ascx" TagName="GalleryNavigation" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <div class="mainCol clearfix galleryCol">
+        <h3><%=CurrentNode.Property(Fields.GallerySection.Title)%></h3>
+        <%if (this.Items.Count > 0){%>
+        <ul class="previewAll clearfix">
+            <%foreach (var item in this.Items){%>
+            <li><a href="<%=item.Url%>" title="<%=item.Property(Fields.GalleryItem.Title)%>"><%=HtmlHelper.GalleryItemOverviewImage(item)%></a></li>
+            <%}%>
+        </ul>
+        <%}%>
+    </div>
+    <div class="sideCol">
+        <uc:GalleryNavigation ID="galNav" runat="server" />
+    </div>
+</asp:Content>
