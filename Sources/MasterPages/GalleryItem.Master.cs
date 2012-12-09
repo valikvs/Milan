@@ -53,7 +53,7 @@
         {
             get
             {
-                return this.imageFolder ?? (this.imageFolder = CurrentNode.PropertyAsMediaFolder(Fields.Project.ImageFolder));
+                return this.imageFolder ?? (this.imageFolder = CurrentNode.PropertyAsMediaFolder(Fields.GalleryItem.ImageFolder));
             }
         }
 

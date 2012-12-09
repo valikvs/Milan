@@ -82,25 +82,6 @@
             public const string ImageFolder = "imageFolder";
         }
 
-        public static class ProjectsOverview
-        {
-            public const string StartProject = "startProject";
-            public const string ViewAllText = "viewAllText";
-            public const string ViewNextProject = "viewNextProject";
-            public const string ViewPreviousProject = "viewPreviousProject";
-        }
-
-        public static class ProjectsSection
-        {
-            public const string Title = "title";
-        }
-
-        public static class Project
-        {
-            public const string Title = "title";
-            public const string ImageFolder = "imageFolder";
-        }
-
         public static class Studio
         {
             public const string Text = "text";

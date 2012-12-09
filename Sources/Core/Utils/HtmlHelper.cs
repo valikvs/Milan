@@ -55,44 +55,6 @@
             return RenderControl(control);
         }
 
-        public static string ProjectImage(Media media)
-        {
-            var mediaUrl = media.AsMediaUrl();
-            if (string.IsNullOrEmpty(mediaUrl))
-            {
-                return string.Empty;
-            }
-
-            var item = new HtmlGenericControl("li");
-            var url = new HyperLink { NavigateUrl = mediaUrl };
-            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "113", "Height", "85") };
-            url.Controls.Add(image);
-            item.Controls.Add(url);
-
-            return RenderControl(item);
-        }
-
-        public static string ProjectOverviewImage(Node project)
-        {
-            var imageFolder = project.PropertyAsMediaFolder(Fields.Project.ImageFolder);
-            if (imageFolder != null)
-            {
-                var media = imageFolder.Children.FirstOrDefault();
-                if (media != null)
-                {
-                    var mediaUrl = media.AsMediaUrl();
-                    if (!string.IsNullOrEmpty(mediaUrl))
-                    {
-                        var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "188", "Height", "141"), AlternateText = "pic" };
-
-                        return RenderControl(image);
-                    }
-                }
-            }
-
-            return string.Empty;
-        }
-
         public static string StudioImage(Media media)
         {
             var mediaUrl = media.AsMediaUrl();
@@ -144,14 +106,6 @@
             var control = (NewsYear)LoadControl("~/UserControls/NewsYear.ascx", self);
             control.YearNode = year;
             control.IsCurrentYear = current;
-
-            return RenderControl(control);
-        }
-
-        public static string ProjectsYear(Control self, Node year)
-        {
-            var control = (ProjectsYear)LoadControl("~/UserControls/ProjectsYear.ascx", self);
-            control.YearNode = year;
 
             return RenderControl(control);
         }

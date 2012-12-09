@@ -95,24 +95,6 @@
             }
         }
 
-        public static Node ProjectsOverviewNode
-        {
-            get
-            {
-                return LanguageNode.GetChildNodesByType(DocumentTypes.ProjectsOverview).First();
-            }
-        }
-
-        public static List<Node> ProjectsSections
-        {
-            get
-            {
-                return ProjectsOverviewNode != null ?
-                    ProjectsOverviewNode.GetChildNodesByType(DocumentTypes.ProjectsSection).Where(y => y.Children.Count > 0).ToList()
-                    : new List<Node>();
-            }
-        }
-
         public static Node StudioNode
         {
             get
@@ -168,73 +150,6 @@
         public static List<Node> GetArchiveNewsNodes(int year)
         {
             return NewsNodes.Where(n => n.PropertyAsDateTime(Fields.NewsItem.Date).Year == year).ToList();
-        }
-
-        public static List<Node> GetSectionYears(Node node)
-        {
-            return node != null ? 
-                node.GetChildNodesByType(DocumentTypes.ProjectsYear).Where(y => y.Children.Count > 0).ToList() : 
-                new List<Node>();
-        }
-
-        public static List<Node> GetSectionProjects(Node node)
-        {
-            return node != null ?
-                node.GetDescendantNodesByType(DocumentTypes.Project).ToList() :
-                new List<Node>();
-        }
-
-        public static List<Node> GetYearProjects(Node node)
-        {
-            return node != null ?
-                node.GetChildNodesByType(DocumentTypes.Project).ToList() :
-                new List<Node>();
-        }
-
-        public static Node GetNextProject(Node node)
-        {
-            var section = node.Parent.Parent as Node;
-            if (section == null)
-            {
-                return null;
-            }
-
-            var projects = GetSectionProjects(section);
-            if (projects.Count < 2)
-            {
-                return null;
-            }
-
-            var index = projects.FindIndex(p => p.Id == node.Id);
-            if (index >= 0 && projects.Count - 1 > index)
-            {
-                return projects[++index];
-            }
-
-            return null;
-        }
-
-        public static Node GetPreviousProject(Node node)
-        {
-            var section = node.Parent.Parent as Node;
-            if (section == null)
-            {
-                return null;
-            }
-
-            var projects = GetSectionProjects(section);
-            if (projects.Count < 2)
-            {
-                return null;
-            }
-
-            var index = projects.FindIndex(p => p.Id == node.Id);
-            if (index > 0)
-            {
-                return projects[--index];
-            }
-
-            return null;
         }
 
         public static List<Node> GetPartnersPages(Node node)

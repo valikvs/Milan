@@ -136,27 +136,6 @@
     <Compile Include="MasterPages\Studio.Master.designer.cs">
       <DependentUpon>Studio.Master</DependentUpon>
     </Compile>
-    <Compile Include="MasterPages\Project.Master.cs">
-      <DependentUpon>Project.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\Project.Master.designer.cs">
-      <DependentUpon>Project.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPages\ProjectsSection.Master.cs">
-      <DependentUpon>ProjectsSection.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\ProjectsSection.Master.designer.cs">
-      <DependentUpon>ProjectsSection.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPages\ProjectsOverview.Master.cs">
-      <DependentUpon>ProjectsOverview.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\ProjectsOverview.Master.designer.cs">
-      <DependentUpon>ProjectsOverview.Master</DependentUpon>
-    </Compile>
     <Compile Include="MasterPages\Recommendation.Master.cs">
       <DependentUpon>Recommendation.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,20 +234,6 @@
     </Compile>
     <Compile Include="UserControls\Partner.ascx.designer.cs">
       <DependentUpon>Partner.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ProjectsNavigation.ascx.cs">
-      <DependentUpon>ProjectsNavigation.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControls\ProjectsNavigation.ascx.designer.cs">
-      <DependentUpon>ProjectsNavigation.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ProjectsYear.ascx.cs">
-      <DependentUpon>ProjectsYear.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControls\ProjectsYear.ascx.designer.cs">
-      <DependentUpon>ProjectsYear.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\RecommendationsNavigation.ascx.cs">
       <DependentUpon>RecommendationsNavigation.ascx</DependentUpon>
@@ -402,8 +367,6 @@
     <Content Include="UserControls\Navigation.ascx" />
     <Content Include="UserControls\GoogleMap.ascx" />
     <Content Include="UserControls\Partner.ascx" />
-    <Content Include="UserControls\ProjectsNavigation.ascx" />
-    <Content Include="UserControls\ProjectsYear.ascx" />
     <Content Include="UserControls\RecommendationsNavigation.ascx" />
     <Content Include="UserControls\Sharing.ascx" />
     <Content Include="UserControls\HeaderButtons.ascx" />
@@ -428,9 +391,6 @@
     <Content Include="MasterPages\NewsItem.Master" />
     <Content Include="MasterPages\Recommendations.Master" />
     <Content Include="MasterPages\Recommendation.Master" />
-    <Content Include="MasterPages\ProjectsOverview.Master" />
-    <Content Include="MasterPages\ProjectsSection.Master" />
-    <Content Include="MasterPages\Project.Master" />
     <Content Include="MasterPages\Studio.Master" />
     <Content Include="MasterPages\Contact.Master" />
     <Content Include="MasterPages\PartnersOverview.Master" />
