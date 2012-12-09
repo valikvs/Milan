@@ -10,7 +10,9 @@
         <uc:GoogleMap runat="server" ID="Maps"></uc:GoogleMap>
         <h3><%=CurrentNode.Property(Fields.Contact.Title)%></h3>
         <%=CurrentNode.Property(Fields.Contact.Text)%>
+        <form id="Form1" runat="server">
         <uc:ContactForm runat="server" ID="ContactForm" />
+        </form>
     </div>
     <div class="sideCol">
         <%=HtmlHelper.LeftNavigationItem(CurrentNode)%>

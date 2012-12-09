@@ -1,6 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainContent.master.cs"
     Inherits="VSS.Milan.Web.MasterPages.MainContent" MasterPageFile="~/masterpages/BaseContent.master" %>
-<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls" Assembly="umbraco" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
     <body>
         <div class="wrapper">
@@ -9,12 +8,10 @@
                 <a href="#" class="logo" runat="server" id="logoUrl" clientidmode="Static"></a>
                 <umbraco:Macro ID="uTopNav" Alias="TopNavigation" runat="server" />
             </div>
-            <form runat="server">
             <asp:contentplaceholder id="ContentPlaceHolderMain" runat="server"></asp:contentplaceholder>
             <div class="clear he">
                 <!---->
             </div>
-            </form>
         </div>
         <div class="mainFooter">
             <div class="side">
