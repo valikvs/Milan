@@ -201,6 +201,13 @@
                 new List<Node>();
         }
 
+        public static List<Node> GetGalleryAllItems(Node gallery)
+        {
+            return gallery != null ?
+                gallery.GetDescendantNodesByType(DocumentTypes.GalleryItem).ToList() :
+                new List<Node>();
+        }
+
         public static List<Node> GetGallerySectionItems(Node section)
         {
             return section != null ?

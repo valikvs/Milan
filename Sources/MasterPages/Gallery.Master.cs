@@ -1,17 +1,31 @@
 ﻿namespace VSS.Milan.Web.MasterPages
 {
     using System;
+    using System.Collections.Generic;
+
+    using VSS.Milan.Web.Core.Utils;
+
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
 
     public partial class Gallery : System.Web.UI.MasterPage
     {
+        private List<Node> items;
+
         protected static Node CurrentNode
         {
             get
             {
                 return Node.GetCurrent();
+            }
+        }
+
+        protected List<Node> Items
+        {
+            get
+            {
+                return this.items ?? (this.items = NodeHelper.GetGalleryAllItems(CurrentNode));
             }
         }
 
