@@ -10,7 +10,7 @@
     using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
 
-    public class NodeHelper
+    public static class NodeHelper
     {
         public static Node HomeNode
         {

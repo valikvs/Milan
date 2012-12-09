@@ -22,7 +22,7 @@
                 return string.Empty;
             }
 
-            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "530"), AlternateText = "pic" };
+            var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 530) };
 
             return RenderControl(image);
         }
@@ -35,7 +35,7 @@
                 return string.Empty;
             }
 
-            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "277"), AlternateText = "pic" };
+            var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 277), AlternateText = "pic" };
 
             return RenderControl(image);
         }
@@ -49,7 +49,7 @@
             }
 
             var control = new HyperLink { NavigateUrl = node.Url };
-            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "190") };
+            var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 190) };
             control.Controls.Add(image);
 
             return RenderControl(control);
@@ -63,7 +63,7 @@
                 return string.Empty;
             }
 
-            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "220"), AlternateText = "pic" };
+            var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 220) };
 
             return RenderControl(image);
         }
@@ -92,7 +92,7 @@
                 return string.Empty;
             }
 
-            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "185"), AlternateText = "pic" };
+            var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 185) };
 
             var link = new HyperLink { CssClass = "fancybox", NavigateUrl = mediaUrl };
             link.Attributes.Add("rel", "gallery1");
@@ -141,7 +141,7 @@
 
             var item = new HtmlGenericControl("li");
             var url = new HyperLink { NavigateUrl = mediaUrl };
-            var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "113", "Height", "85") };
+            var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 113, 85) };
             url.Controls.Add(image);
             item.Controls.Add(url);
 
@@ -159,7 +159,7 @@
                     var mediaUrl = media.AsMediaUrl();
                     if (!string.IsNullOrEmpty(mediaUrl))
                     {
-                        var image = new Image { ImageUrl = UrlHelper.ImageLink(mediaUrl, "Width", "188", "Height", "141") };
+                        var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 188, 141) };
 
                         return RenderControl(image);
                     }

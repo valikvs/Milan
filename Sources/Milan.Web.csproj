@@ -79,6 +79,7 @@
     <Compile Include="Core\Utils\Helper.cs" />
     <Compile Include="Core\Utils\MailHelper.cs" />
     <Compile Include="Core\Utils\NodeHelper.cs" />
+    <Compile Include="Core\Utils\ThumbsHelper.cs" />
     <Compile Include="Core\Utils\UrlHelper.cs" />
     <Compile Include="MasterPages\BaseContent.Master.cs">
       <DependentUpon>BaseContent.Master</DependentUpon>

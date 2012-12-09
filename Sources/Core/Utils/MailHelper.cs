@@ -4,7 +4,7 @@
     using System.Net.Mail;
     using umbraco.BusinessLogic;
 
-    public class MailHelper
+    public static class MailHelper
     {
         public static bool SendMail(string fromMail, string toMail, string subject, string body, bool isHtml)
         {

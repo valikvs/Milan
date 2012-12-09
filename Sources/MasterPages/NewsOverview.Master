@@ -4,8 +4,6 @@
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 <%@ Import Namespace="umbraco.NodeFactory" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
-<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
-    Assembly="umbraco" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="mainCol clearfix newsCol">
         <asp:Repeater runat="server" id="rptNews">

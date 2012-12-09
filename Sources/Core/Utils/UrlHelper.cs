@@ -2,7 +2,6 @@
 {
     using System;
     using System.Web;
-
     using umbraco.BusinessLogic;
 
     public static class UrlHelper
