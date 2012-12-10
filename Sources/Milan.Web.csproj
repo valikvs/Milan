@@ -71,14 +71,17 @@
     <Compile Include="Core\Constants\Fields.cs" />
     <Compile Include="Core\Constants\Parameters.cs" />
     <Compile Include="Core\Data\Month.cs" />
+    <Compile Include="Core\Data\SitemapPage.cs" />
     <Compile Include="Core\Enums\Effect.cs" />
     <Compile Include="Core\Extentions\NodeExtentions.cs" />
     <Compile Include="Core\Extentions\StringExtentions.cs" />
+    <Compile Include="Core\Umbraco\PublishEventHandler.cs" />
     <Compile Include="Core\Utils\FormsHelper.cs" />
     <Compile Include="Core\Utils\HtmlHelper.cs" />
     <Compile Include="Core\Utils\Helper.cs" />
     <Compile Include="Core\Utils\MailHelper.cs" />
     <Compile Include="Core\Utils\NodeHelper.cs" />
+    <Compile Include="Core\Utils\SitemapHelper.cs" />
     <Compile Include="Core\Utils\ThumbsHelper.cs" />
     <Compile Include="Core\Utils\UrlHelper.cs" />
     <Compile Include="Handlers\SitemapHandler.ashx.cs">

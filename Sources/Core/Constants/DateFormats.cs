@@ -3,5 +3,6 @@
     public static class DateFormats
     {
         public const string Default = "dd MMMM yyyy";
+        public const string Iso = "s";
     }
 }
