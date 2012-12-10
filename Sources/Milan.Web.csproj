@@ -81,6 +81,9 @@
     <Compile Include="Core\Utils\NodeHelper.cs" />
     <Compile Include="Core\Utils\ThumbsHelper.cs" />
     <Compile Include="Core\Utils\UrlHelper.cs" />
+    <Compile Include="Handlers\SitemapHandler.ashx.cs">
+      <DependentUpon>SitemapHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPages\BaseContent.Master.cs">
       <DependentUpon>BaseContent.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -399,6 +402,7 @@
     <Content Include="MasterPages\Gallery.Master" />
     <Content Include="MasterPages\GallerySection.Master" />
     <Content Include="MasterPages\GalleryItem.Master" />
+    <Content Include="Handlers\SitemapHandler.ashx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -423,6 +427,7 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>XCOPY "$(ProjectDir)bin\$(TargetName).*" "..\..\Umbraco\bin\" /Y
+XCOPY "$(ProjectDir)Handlers\*.ashx" "..\..\Umbraco\handlers\" /Y
 XCOPY "$(ProjectDir)UserControls\*.ascx" "..\..\Umbraco\usercontrols\" /Y
 XCOPY "$(ProjectDir)MasterPages\*.master" "..\..\Umbraco\masterpages\" /Y
 XCOPY "$(ProjectDir)css\*.*" "..\..\Umbraco\css\" /Y
