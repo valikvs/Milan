@@ -6,12 +6,18 @@
 <%@ Register TagPrefix="uc" Src="~/UserControls/GalleryNavigation.ascx" TagName="GalleryNavigation" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="mainCol clearfix galleryCol">
-        <%if (this.Items.Count > 0){%>
-        <ul class="previewAll clearfix">
-            <%foreach (var item in this.Items){%>
-            <li><a href="<%=item.Url%>" title="<%=item.Property(Fields.GalleryItem.Title)%>"><%=HtmlHelper.GalleryItemOverviewImage(item)%></a></li>
+        <%if (this.Sections.Count > 0){%>
+            <%foreach (var section in this.Sections){%>
+            <div class="sectionOverview">
+            <h3><%=section.Property(Fields.GallerySection.Title)%></h3>
+            <ul class="previewAll clearfix">
+                <%foreach (var item in NodeHelper.GetGallerySectionItems(section).Take(6)){%>
+                <li><a href="<%=item.Url%>" title="<%=item.Property(Fields.GalleryItem.Title)%>"><%=HtmlHelper.GalleryItemOverviewImage(item)%></a></li>
+                <%}%>
+            </ul>
+            <a href="<%=section.Url%>" class="link"><%=ViewAllText%></a>
+            </div>
             <%}%>
-        </ul>
         <%}%>
     </div>
     <div class="sideCol">

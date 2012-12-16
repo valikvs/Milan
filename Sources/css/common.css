@@ -114,6 +114,7 @@ h6 {font-size:12px; font-family: 'CenturyGothic';}
 .galleryCol .prevProject {left:-39px; background:url(../images/arrows/corner_l.png);}
 .galleryCol .nextProject, .galleryCol .prevProject { position:absolute; top:35%; width:25px; height:81px; background-repeat:no-repeat; background-position:center top;}
 .galleryCol .nextProject:hover, .galleryCol .prevProject:hover {background-position:center bottom;}
+.galleryCol .sectionOverview { padding-bottom:20px;}
 
 /*recommendation col*/
 .galleryRecom { padding-top:3px;}

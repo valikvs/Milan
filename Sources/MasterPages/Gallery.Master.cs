@@ -2,16 +2,16 @@
 {
     using System;
     using System.Collections.Generic;
-
-    using VSS.Milan.Web.Core.Utils;
-
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
     using VSS.Milan.Web.Core.Extentions;
+    using VSS.Milan.Web.Core.Utils;
 
     public partial class Gallery : System.Web.UI.MasterPage
     {
+        private List<Node> sections;
         private List<Node> items;
+        private string viewAllText;
 
         protected static Node CurrentNode
         {
@@ -21,11 +21,27 @@
             }
         }
 
+        protected List<Node> Sections
+        {
+            get
+            {
+                return this.sections ?? (this.sections = NodeHelper.GetGallerySections(CurrentNode));
+            }
+        }
+
         protected List<Node> Items
         {
             get
             {
                 return this.items ?? (this.items = NodeHelper.GetGalleryAllItems(CurrentNode));
+            }
+        }
+
+        protected string ViewAllText
+        {
+            get
+            {
+                return this.viewAllText ?? (this.viewAllText = CurrentNode.Property(Fields.Gallery.ViewAllText));
             }
         }
 
