@@ -1,5 +1,6 @@
 ﻿namespace VSS.Milan.Web.Handlers
 {
+    using System.Globalization;
     using System.IO;
     using System.Text;
     using System.Web;
@@ -47,7 +48,7 @@
                 }
 
                 xmlFile.AppendLine("<changefreq>daily</changefreq>");
-                xmlFile.AppendLine("<priority>" + page.Priority + "</priority>");
+                xmlFile.AppendLine("<priority>" + page.Priority.ToString(CultureInfo.InvariantCulture).Replace(",", ".") + "</priority>");
                 xmlFile.AppendLine("</url>");
             }
 
