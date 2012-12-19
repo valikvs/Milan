@@ -56,6 +56,7 @@
 
         public static class NewsItem
         {
+            public const string Title = "title";
             public const string Date = "date";
             public const string Image1 = "image1";
             public const string Image2 = "image2";

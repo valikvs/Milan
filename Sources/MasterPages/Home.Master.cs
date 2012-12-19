@@ -1,22 +1,13 @@
 ﻿namespace VSS.Milan.Web.MasterPages
 {
-    using System;
     using umbraco.NodeFactory;
     using VSS.Milan.Web.Core.Constants;
-    using VSS.Milan.Web.Core.Extentions;
     using VSS.Milan.Web.Core.Enums;
+    using VSS.Milan.Web.Core.Extentions;
     using VSS.Milan.Web.Core.Utils;
 
     public partial class Home : System.Web.UI.MasterPage
     {
-        private static Node CurrentNode
-        {
-            get
-            {
-                return Node.GetCurrent();
-            }
-        }
-
         protected string BodyClass
         {
             get
@@ -43,12 +34,7 @@
             get
             {
                 var russianNode = CurrentNode.PropertyAsNode(Fields.Home.RussianNode);
-                if (russianNode != null)
-                {
-                    return russianNode.Url;
-                }
-
-                return string.Empty;
+                return russianNode != null ? russianNode.Url : string.Empty;
             }
         }
 
@@ -57,12 +43,7 @@
             get
             {
                 var englishNode = CurrentNode.PropertyAsNode(Fields.Home.EnglishNode);
-                if (englishNode != null)
-                {
-                    return englishNode.Url;
-                }
-
-                return string.Empty;
+                return englishNode != null ? englishNode.Url : string.Empty;
             }
         }
 
@@ -79,6 +60,14 @@
             get
             {
                 return CurrentNode.Property(Fields.Home.FooterBottomText);
+            }
+        }
+
+        private static Node CurrentNode
+        {
+            get
+            {
+                return Node.GetCurrent();
             }
         }
     }

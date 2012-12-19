@@ -215,6 +215,13 @@
                 new List<Node>();
         }
 
+        public static List<Node> GetGallerySectionYearItems(Node year)
+        {
+            return year != null ?
+                year.GetChildNodesByType(DocumentTypes.GalleryItem).ToList() :
+                new List<Node>();
+        }
+
         public static Node GetGalleryItemNext(Node item)
         {
             var section = item.Parent.Parent as Node;

@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.Master.cs" Inherits="VSS.Milan.Web.MasterPages.Home"
     MasterPageFile="~/masterpages/BaseContent.master" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderBase" runat="server">
-    <body class="<%=BodyClass%>">
+    <body class="splash">
         <div class="wrapper">
             <div class="splashContainer clearfix">
                 <a href="<%=RussianUrl%>" class="rus"></a><a href="<%=EnglishUrl%>" class="eng"></a><span class="visuals sn1">

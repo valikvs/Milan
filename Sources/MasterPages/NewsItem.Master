@@ -3,13 +3,14 @@
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
-<%@ Register TagPrefix="umbraco" Namespace="umbraco.presentation.templateControls"
-    Assembly="umbraco" %>
 <%@ Register TagPrefix="uc" Src="~/UserControls/Sharing.ascx" TagName="Sharing" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="mainCol clearfix newsCol">
+        <h3><%=CurrentNode.Property(Fields.NewsItem.Title)%></h3>
+        <ul class="previewAll clearfix">
         <%=HtmlHelper.NewsImage(CurrentNode, Fields.NewsItem.Image1)%>
         <%=HtmlHelper.NewsImage(CurrentNode, Fields.NewsItem.Image2)%>
+        </ul>
         <h6><%= CurrentNode.PropertyAsDateTime(Fields.NewsItem.Date).ToString(DateFormats.Default)%></h6>
         <%=CurrentNode.Property(Fields.NewsItem.Text)%>
         <uc:Sharing runat="server"/>

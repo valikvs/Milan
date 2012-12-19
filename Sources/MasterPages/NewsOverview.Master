@@ -5,13 +5,15 @@
 <%@ Import Namespace="umbraco.NodeFactory" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Utils" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-    <div class="mainCol clearfix newsCol">
+    <div class="mainCol clearfix newsCol overview">
         <asp:Repeater runat="server" id="rptNews">
             <ItemTemplate>
         <div class="newsContainer clearfix">
             <%# HtmlHelper.NewsOverviewImage((Node)Container.DataItem)%>
             <div class="col">
-                <h6><%# ((Node)Container.DataItem).PropertyAsDateTime(Fields.NewsItem.Date).ToString(DateFormats.Default)%></h6>
+                <h3>
+                    <a href="<%# ((Node)Container.DataItem).Url%>"><%# ((Node)Container.DataItem).Property(Fields.NewsItem.Title)%></a>
+                </h3>
                 <p><%# ((Node)Container.DataItem).Property(Fields.NewsItem.PreveiwText)%></p>
                 <a href="<%# ((Node)Container.DataItem).Url%>" class="link"><%=NodeHelper.NewsOverviewNode.Property(Fields.NewsOverview.ReadMoreText)%></a>
             </div>

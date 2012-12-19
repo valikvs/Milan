@@ -35,9 +35,13 @@
                 return string.Empty;
             }
 
-            var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 277), AlternateText = "pic" };
+            var image = new Image { ImageUrl = ThumbsHelper.ThumbUrl(mediaUrl, 277) };
 
-            return RenderControl(image);
+            var link = new HyperLink { CssClass = "fancybox", NavigateUrl = mediaUrl };
+            link.Attributes.Add("rel", "gallery1");
+            link.Controls.Add(image);
+
+            return RenderControl(link);
         }
 
         public static string NewsOverviewImage(Node node)
