@@ -11,7 +11,7 @@
     <% } else { %>
     <li class="hasSubMenu">
     <% } %>
-        <a href="#"><%= year.Name%></a>
+        <a href="<%=NodeHelper.NewsOverviewNode.Url%>?y=<%=year.Name%>" class="navUrl"><%=year.Name%></a>
         <%= HtmlHelper.NewsYear(this, year, this.IsCurrentYear(year))%>
     </li>
     <% } %>

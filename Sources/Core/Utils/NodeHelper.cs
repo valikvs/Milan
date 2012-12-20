@@ -147,7 +147,7 @@
             return NewsNodes.Where(n => n.PropertyAsDateTime(Fields.NewsItem.Date).Year == year && n.PropertyAsDateTime(Fields.NewsItem.Date).Month == month).ToList();
         }
 
-        public static List<Node> GetArchiveNewsNodes(int year)
+        public static List<Node> GetNewsNodesByYear(int year)
         {
             return NewsNodes.Where(n => n.PropertyAsDateTime(Fields.NewsItem.Date).Year == year).ToList();
         }

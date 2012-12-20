@@ -44,13 +44,21 @@
 
                 return NodeHelper.GetNewsNodes(year, month);
             }
+
+            if (!string.IsNullOrEmpty(yearParam))
+            {
+                int year;
+                int.TryParse(yearParam, out year);
+
+                return NodeHelper.GetNewsNodesByYear(year);
+            }
             
             if (!string.IsNullOrEmpty(archiveParam))
             {
                 int year;
                 int.TryParse(archiveParam, out year);
 
-                return NodeHelper.GetArchiveNewsNodes(year);
+                return NodeHelper.GetNewsNodesByYear(year);
             }
 
             return NodeHelper.NewsNodes.Take(4).ToList();
