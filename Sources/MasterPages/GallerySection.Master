@@ -6,7 +6,7 @@
 <%@ Register TagPrefix="uc" Src="~/UserControls/GalleryNavigation.ascx" TagName="GalleryNavigation" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="mainCol clearfix galleryCol">
-        <h3><%=CurrentNode.Property(Fields.GallerySection.Title)%></h3>
+        <h3><%=CurrentNode.Property(Fields.GallerySection.Title)%> <%=YearText%></h3>
         <%if (this.Items.Count > 0){%>
         <ul class="previewAll clearfix">
             <%foreach (var item in this.Items){%>

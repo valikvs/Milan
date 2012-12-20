@@ -14,5 +14,10 @@
             public const string Month = "m";
             public const string Archive = "archive";
         }
+
+        public static class Gallery
+        {
+            public const string Year = "y";
+        }
     }
 }

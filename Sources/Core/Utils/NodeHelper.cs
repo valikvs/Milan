@@ -1,5 +1,6 @@
 ﻿namespace VSS.Milan.Web.Core.Utils
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading;
@@ -213,6 +214,13 @@
             return section != null ?
                 section.GetDescendantNodesByType(DocumentTypes.GalleryItem).ToList() :
                 new List<Node>();
+        }
+
+        public static Node GetGallerySectionYearNode(Node section, string name)
+        {
+            return section != null && !string.IsNullOrEmpty(name) ?
+                section.GetChildNodesByType(DocumentTypes.GalleryYear).FirstOrDefault(y => y.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase)) :
+                null;
         }
 
         public static List<Node> GetGallerySectionYearItems(Node year)

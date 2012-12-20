@@ -3,7 +3,7 @@
 <%@ Import Namespace="VSS.Milan.Web.Core.Constants" %>
 <%@ Import Namespace="VSS.Milan.Web.Core.Extentions" %>
 
-<li class="hasSubMenu<%if (NodeHelper.IsCurrentPath(this.YearNode)) {%> expanded<% } %>"><a href="#"><%=this.YearNode.Name %></a>
+<li class="hasSubMenu<%if (NodeHelper.IsCurrentPath(this.YearNode)) {%> expanded<% } %>"><a href="<%=SectionNode.Url%>?y=<%=YearNode.Name%>" class="navUrl"><%=YearNode.Name%></a>
     <ul>
         <% foreach (var item in NodeHelper.GetGalleryItems(this.YearNode)) { %>
             <li<%if (NodeHelper.IsCurrentNode(item)) {%> class="cur"<% } %>><a href="<%=item.Url%>"><%=item.Property(Fields.BaseContent.NavigationTitle)%></a></li>
