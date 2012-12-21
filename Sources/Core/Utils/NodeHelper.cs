@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading;
+    using System.Web;
     using umbraco;
     using umbraco.cms.businesslogic.language;
     using umbraco.interfaces;
@@ -292,6 +293,24 @@
             return node != null
                    && currentNode != null
                    && currentNode.GetAncestorOrSelfNodes().Count(n => n.Id == node.Id) == 1;
+        }
+
+        public static bool IsCurrentYear(Node node)
+        {
+            var currentNode = Node.GetCurrent();
+
+            if (!currentNode.NodeTypeAlias.Equals(DocumentTypes.GallerySection))
+            {
+                return false;
+            }
+            
+            var yearParam = HttpContext.Current.Request.QueryString[Parameters.Gallery.Year];
+            var year = !string.IsNullOrEmpty(yearParam)
+                       ? GetGallerySectionYearNode(currentNode, yearParam)
+                       : null;
+
+            return year != null
+                   && year.Id == node.Id;
         }
     }
 }
